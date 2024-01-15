@@ -1,0 +1,8 @@
+{
+    "index":{
+        "fields":["ModuleOneID","module_one_id"]
+    },
+    "ddoc":"indexModuleOneIDDoc", 
+    "name":"indexModuleOneID",
+    "type":"json"
+}

@@ -1,0 +1,11 @@
+{
+    "index": {
+        "fields": [
+            "docType",
+            "invoice_cost_code"
+        ] // Names of the fields to be queried
+    },
+    "ddoc": "indexINVCostCodeVoc", // (optional) Name of the design document in which the index will be created.
+    "name": "indexINVCostCode",
+    "type": "json"
+}

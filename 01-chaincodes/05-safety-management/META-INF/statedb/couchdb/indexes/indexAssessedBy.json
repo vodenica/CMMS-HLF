@@ -1,0 +1,11 @@
+{
+    "index": {
+        "fields": [
+            "docType",
+            "risk_assessment_assessed_by"
+        ]
+    },
+    "ddoc": "indexAssessedByDoc",
+    "name": "indexAssessedBy",
+    "type": "json"
+}

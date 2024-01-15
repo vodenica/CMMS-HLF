@@ -1,0 +1,79 @@
+
+
+# Create Ne Operational Invoice
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v3 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"NewInvoiceOperationalServices","Args":["invoice", "operations", "INV-OPS-20230920-0001", "200000", "0", "10000", "8000", "5000"]}'
+
+
+./network.sh deployCC -ccn finance_v6 -ccv 1.0 -ccp //home/vodenica/Desktop/test-network-smart-contracts/08-Financial-Services/fin-chaincode -ccl go
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v3 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateInvoiceOpsStatusToApproved","Args":["INV-OPS-20230920-0001"]}'
+
+# Get the Invoice By ID
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v3 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetInvoiceOpsByID","Args":["INV-OPS-20230920-0001"]}'
+
+# Get the History of the Invoice
+
+GetInvoiceOpsRequestHistory
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v3 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetInvoiceOpsRequestHistory","Args":["INV-OPS-20230920-0001"]}'
+
+
+# Creating new additinal work Invoice:
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v5 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"NewInvoiceAdditionalWork","Args":["invoice", "additional-work", "INV-WORK-20230920-0002", "The Invoice is issued for the completed additional works.", "1000", "1", "{\"invoice_item_one_qty\":2, \"invoice_item_one_item_cost\":100, \"invoice_item_one_cost\":200}", "{\"invoice_item_two_qty\":1, \"invoice_item_two_item_cost\":50, \"invoice_item_two_cost\":50}", "{\"invoice_item_three_qty\":4, \"invoice_item_three_item_cost\":25, \"invoice_item_three_cost\":100}", "{\"invoice_item_four_qty\":3, \"invoice_item_four_item_cost\":50, \"invoice_item_four_cost\":150}", "{\"invoice_item_five_qty\":30, \"invoice_item_five_item_cost\":4, \"invoice_item_five_cost\":120}"]}'
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v4 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateInvoiceWorkStatusToApproved","Args":["INV-WORK-20230920-0002"]}'
+
+
+# History for the additinal works invoice
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v5 --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetInvoiceWorkRequestHistory","Args":["INV-WORK-20230920-0002"]}'
+
+
+# New purchase Request
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance_v5 --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetInvoiceWorkRequestHistory","Args":["purchase-request", "maintenanace-parts", "PURCH-ORD-20230920-0002", ]}'
+
+
+# New Purchase Request 21.09.2023
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"NewPurchaseRequestMtncParts","Args":["purchase-request", "maintenance-parts", "PURCH-20230921-0001", "{\"cost_code_item_one\":\"11111\", \"item_description\":\"Maintenance Part\",\"item_one_cost\":100,\"item_one_quantity\":2,\"item_one_total_cost\":200}", "{\"cost_code_item_two\":\"22222\", \"item_description\":\"Maintenance Part\",\"item_two_cost\":100,\"item_two_quantity\":2,\"item_two_total_cost\":200}", "{\"cost_code_item_three\":\"33333\", \"item_description\":\"Maintenance Part\",\"item_three_cost\":100,\"item_three_quantity\":2,\"item_three_total_cost\":200}", "{\"cost_code_item_four\":\"44444\", \"item_description\":\"Maintenance Part\",\"item_four_cost\":100,\"item_four_quantity\":2,\"item_four_total_cost\":200}", "{\"cost_code_item_five\":\"55555\", \"item_description\":\"Maintenance Part\",\"item_five_cost\":100,\"item_five_quantity\":2,\"item_five_total_cost\":200}", "Suplier ID: 123456", "The Purchase Order is issued for the purchase of the maintenance spare parts.", "No remarks"]}'
+
+
+# Purchase Order Approver
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdatePurchaseOrderToApproved","Args":["PURCH-20230921-0001", "General Manager", "1"]}'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
