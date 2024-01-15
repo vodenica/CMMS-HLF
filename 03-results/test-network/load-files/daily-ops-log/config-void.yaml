@@ -1,0 +1,49 @@
+test:
+  name: Daily operations log
+  description: A test benchmark for testing the Daily Operations Log Smart Contract
+  workers:
+    type: local
+    # number of workers to run the test shall be 1, because the test is not designed 
+    # to be run in parallel as only one worker can create the daily operations log.
+    number: 5
+  rounds:
+    - label: Creating Daily Operation Logs 
+      # 5000 transactions should create around 100 cars per worker but not guaranteed
+      # so need to set asset limits to less than 1000 for the other tests
+      # I've tested with 100, 500, 1500, 3000, 5000, 10000 transactions.
+      description: Creating Daily Operation Logs benchmark 
+      txNumber: 10
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 5
+      workload:
+        module: benchmarks/samples/fabric/daily-ops-log/createDailyOperationsLog.js
+        arguments:
+          contractId: daily_ops_log
+
+    - label: Reading created Daily Operation Logs
+      description: Read Daily Operation Logs benchmark
+      txDuration: 60
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 5
+      workload:
+        module: benchmarks/samples/fabric/daily-ops-log/readDailyOperationsLog.js
+        arguments:
+          assets: 10
+          contractId: daily_ops_log
+
+    - label: Querying Reading created Daily Operation Logs
+      description: Query Daily Operation Logs benchmark
+      txDuration: 60
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 5
+      workload:
+        module: benchmarks/samples/fabric/daily-ops-log/queryDailyOperationLogs.js
+        arguments:
+          assets: 10
+          contractId: daily_ops_log

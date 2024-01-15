@@ -1,0 +1,37 @@
+test:
+  name: H&R Operations
+  description: A test benchmark for testing the Organisational Smart Contract
+  workers:
+    type: local # local workers
+    # number of workers to run the test shall be 1, because the test is not designed 
+    # to be run in parallel as only one worker can create the daily operations log.
+    number: 5 # workers
+  rounds:
+    - label: Adding a new employee to the organisation
+      # 5000 transactions should create around 100 cars per worker but not guaranteed
+      # so need to set asset limits to less than 1000 for the other tests
+      # I've tested with 10, 50, 100, 200, and 500 transactions.
+      description: Adding new employee to the organisation benchmark
+      txNumber: 500 # transactions per worker, so 50tx * 5workers = 250tx  in total for the test run.
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 500 # transactions per second; 10tx/sec * 5workers = 50tx/sec in total for the test run; 
+            # We tested the load with 10tx/sec, 50tx/sec, 100tx/sec, 200tx/sec, and 500tx/sec.
+      workload:
+        module: benchmarks/samples/fabric/organisation/addNewEmployee.js
+        arguments:
+          contractId: organisation # contractId is the name of the smart contract.
+
+    - label: Reading Newly Added Employee
+      description: Reading Newly Added Employee benchmark
+      txDuration: 60 # seconds per worker, so 60sec * 5workers = 300sec  in total for the test run.
+      rateControl: 
+          type: "fixed-load" # fixed-load is the default rate control type if not specified in the config file.
+          opts:
+            transactionLoad: 100 # transactions per second.
+      workload:
+        module: benchmarks/samples/fabric/organisation/readEmployee.js
+        arguments:
+          assets: 100 # number of assets to read per transaction per worker, so 100assets * 5workers = 500assets  in total for the test run.
+          contractId: organisation # contractId is the name of the smart contract.

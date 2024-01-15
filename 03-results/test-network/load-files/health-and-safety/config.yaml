@@ -1,0 +1,50 @@
+test:
+  name: Health and Safety Smart Contract
+  description: A test benchmark for testing the Health and Safety Smart Contract
+  workers:
+    type: local
+    number: 5
+  rounds:
+    - label: Creating Risk Assessments 
+      # 5000 transactions should create around 100 cars per worker but not guaranteed
+      # so need to set asset limits to less than 1000 for the other tests
+      # I've tested with 50, 100, 200, 500, 1000, 3000, 5000 transactions.
+      description: Create Risk Assessments benchmark 
+      txNumber: 200 # 10, 50, 100, and 200.
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 200 # 10, 50, 100, 200tx/sec; Batch size is calculated as 1000/txNumber 
+      workload:
+        module: benchmarks/samples/fabric/health-and-safety/createRiskAssessment.js
+        arguments:
+          contractId: health_and_safety_smart_contract
+#############################################################################################
+
+    - label: Creating Accident & Incident Reports
+      description: Create Accident & Incident Report benchmark
+      txNumber: 200
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 200 # Transactions per second, Batch size is calculated as 1000/txNumber; 10, 50, 100, 200tx/sec
+      workload:
+        module: benchmarks/samples/fabric/health-and-safety/createAccidentIncidentReport.js
+        arguments:
+          contractId: health_and_safety_smart_contract
+    
+#############################################################################################
+    
+    - label: Reading Created Risk Assessments
+      description: Read Risk Assessments benchmark
+      txDuration: 30
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 5
+      workload:
+        module: benchmarks/samples/fabric/health-and-safety/readRiskAssessments.js
+        arguments:
+          assets: 5
+          contractId: health_and_safety_smart_contract
+    

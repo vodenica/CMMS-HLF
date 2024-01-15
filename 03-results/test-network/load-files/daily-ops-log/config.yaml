@@ -1,0 +1,37 @@
+test:
+  name: Daily operations log
+  description: A test benchmark for testing the Daily Operations Log Smart Contract
+  workers:
+    type: local
+    # number of workers to run the test shall be 1, because the test is not designed 
+    # to be run in parallel as only one worker can create the daily operations log.
+    number: 5 # workers, which gives us e.g. 5*50=250tx/sec load; 5*100=500tx/sec load; 5*200=1000tx/sec load; 5*500=2500tx/sec load; 5*1000=5000tx/sec load; 5*2000=10000tx/sec load; 5*5000=25000tx/sec load; 5*10000=50000tx/sec load;
+  rounds:
+    - label: Creating Daily Operation Logs 
+      # 10 transactions should create around 100 cars per worker but not guaranteed
+      # so need to set asset limits to less than 1000 for the other tests
+      # I've tested with 10, 50, 100, 200, and 500 transactions.
+      description: Creating Daily Operation Logs benchmark 
+      txNumber: 500 # transactions
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 500 # transactions per second, # transactions per second; Batch size is 10tx/sec, so we can send 200tx/sec to the network..
+            # We tested the load with 10, 50, 100, 200, and 500tx/sec and found that 500tx/sec is the maximum load that can be handled by the network.
+      workload:
+        module: benchmarks/samples/fabric/daily-ops-log/createDailyOperationsLog.js
+        arguments:
+          contractId: daily_ops_log
+
+    - label: Reading created Daily Operation Logs
+      description: Read Daily Operation Logs benchmark
+      txDuration: 60 # seconds
+      rateControl: 
+          type: "fixed-load" # transactions per second
+          opts:
+            transactionLoad: 50 # transactions per second; Batch size is 10tx/sec, so we can send 200tx/sec to the network.
+      workload:
+        module: benchmarks/samples/fabric/daily-ops-log/readDailyOperationsLog.js
+        arguments:
+          assets: 50 # number of assets to read per transaction
+          contractId: daily_ops_log
