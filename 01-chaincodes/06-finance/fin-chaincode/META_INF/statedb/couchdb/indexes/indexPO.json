@@ -1,0 +1,11 @@
+{
+    "index": {
+        "fields": [
+            "docType",
+            "cost_of_order"
+        ] // Names of the fields to be queried
+    },
+    "ddoc": "indexPODoc", // (optional) Name of the design document in which the index will be created.
+    "name": "indexPO",
+    "type": "json"
+}

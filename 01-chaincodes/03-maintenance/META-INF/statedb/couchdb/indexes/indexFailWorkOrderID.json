@@ -1,0 +1,8 @@
+{
+    "index":{
+        "fields":["docType","fail_work_order_id"]
+    },
+    "ddoc":"indexFailWorkOrderIDDoc", 
+    "name":"indexFailWorkOrderID",
+    "type":"json"
+}

@@ -1,0 +1,11 @@
+{
+    "index":{
+        "fields":[
+            "docType",
+            "corr_work_order_id"
+        ]
+    },
+    "ddoc":"indexCorrWorkOrderIDDoc", 
+    "name":"indexCorrWorkOrderID",
+    "type":"json"
+}

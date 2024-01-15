@@ -1,0 +1,8 @@
+{
+    "index":{
+        "fields":["docType","prev_work_order_type"]
+    },
+    "ddoc":"indexPrevWorkOrderTypeDoc", 
+    "name":"indexPrevWorkOrderType",
+    "type":"json"
+}

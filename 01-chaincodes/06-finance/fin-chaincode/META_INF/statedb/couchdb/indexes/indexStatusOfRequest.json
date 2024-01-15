@@ -1,0 +1,11 @@
+{
+    "index": {
+        "fields": [
+            "docType",
+            "status_of_the_order"
+        ] // Names of the fields to be queried
+    },
+    "ddoc": "indexStatusOfRequestDoc", // (optional) Name of the design document in which the index will be created.
+    "name": "indexStatusOfRequest",
+    "type": "json"
+}
