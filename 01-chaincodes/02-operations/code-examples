@@ -1,0 +1,145 @@
+./network.sh deployCC -ccn health_and_safety_smart_contract -ccv 1.0 -ccp /home/vodenica/Desktop/07-Safety-Management-for-test-network -ccl go
+
+
+
+
+./network.sh deployCC -ccn daily_ops_log -ccv 1.0 -ccp /home/vodenica/Desktop/test-network-smart-contracts/02-OPS-operations -ccl go
+
+
+
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["","daily-ops-log-ID-0001", "createdBy", {"WeatherDriveStationCondition": "condition", "WeatherDriveStationTemperature": "temperature", "WeatherDriveStationHumidity": "humidity"}, "3", "4","5", "6", "7","8", "9", "10", "11", "12", "13"]}'
+
+
+"daily_ops_log_id", "owner", {
+		"WeatherDriveStationCondition": "condition",
+		"WeatherDriveStationTemperature": "temperature",
+		"WeatherDriveStationHumidity": "humidity"
+	}, {
+		"WeatherReturnStationCondition": "condition",
+		"WeatherReturnStationTemperature": "temperature",
+		"WeatherReturnStationHumidity": "humidity"
+	}, {
+		"PersonnelOnDutyDriveStationShiftManager": "manager",
+		"PersonnelOnDutyDriveStationMaintenanceTechnicianOne": "technician1",
+		"PersonnelOnDutyDriveStationMaintenanceTechnicianTwo": "technician2",
+		"PersonnelOnDutyDriveStationSystemOperatorOne": "operator1",
+		"PersonnelOnDutyDriveStationSystemOperatorTwo": "operator2"
+	}, {
+		"PersonnelOnDutyReturnStationMaintenanceTechnician": "technician",
+		"PersonnelOnDutyReturnStationSystemOperator": "operator"
+	}, "operations_start", "operations_end", 8, 2, 10, "additional_comments"
+	
+	
+	
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["", "daily_ops_log_id", "owner", {"WeatherDriveStationCondition": "condition", "WeatherDriveStationTemperature": "temperature", "WeatherDriveStationHumidity": "humidity"}, {"WeatherReturnStationCondition": "condition", "WeatherReturnStationTemperature": "temperature", "WeatherReturnStationHumidity": "humidity"}, {"PersonnelOnDutyDriveStationShiftManager": "manager", "PersonnelOnDutyDriveStationMaintenanceTechnicianOne": "technician1", "PersonnelOnDutyDriveStationMaintenanceTechnicianTwo": "technician2", "PersonnelOnDutyDriveStationSystemOperatorOne": "operator1", "PersonnelOnDutyDriveStationSystemOperatorTwo": "operator2"}, {"PersonnelOnDutyReturnStationMaintenanceTechnician": "technician", "PersonnelOnDutyReturnStationSystemOperator": "operator"}, "operations_start", "operations_end", 8, 2, 10, "additional_comments"]}'
+
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["","daily-ops-log-ID-0001", "createdBy", {"1", "2", "3"}, "3", "4","5", "6", "7","8", "9", "10", "11", "12", "13"]}'
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["","daily-ops-log-ID-0001", "createdBy", "{\"WeatherDriveStationCondition\": \"condition\", \"WeatherDriveStationTemperature\": \"temperature\", \"WeatherDriveStationHumidity\": \"humidity\"}", "3", "4","5", "6", "7","8", "9", "10", "11", "12", "13"]}'
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["daily-ops-log-ID-0001", "createdBy", "{\"WeatherDriveStation\":{\"WeatherDriveStationCondition\": \"condition\", \"WeatherDriveStationTemperature\": \"temperature\", \"WeatherDriveStationHumidity\": \"humidity\"}}", "3", "4","5", "6", "7","8", "9", "10", "11", "12", "13"]}'
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["daily-ops-log-ID-0001", "createdBy", "{\"weather_drive_station_condition\": \"condition\", \"weather_drive_station_temperature\": \"temperature\", \"weather_drive_station_humidity\": \"humidity\"}", "{\"weather_return_station_condition\": \"condition\", \"weather_return_station_temperature\": \"temperature\", \"weather_return_station_humidity\": \"humidity\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "operations-start-time", "operations-end-time","10", "35", "2500", "25010", "no-comments"]}'
+
+
+
+./network.sh deployCC -ccn daily_ops_log_v3 -ccv 3.1 -ccp /home/vodenica/Desktop/test-network-smart-contracts/02-OPS-operations -ccl go
+
+
+peer chaincode install -n daily_ops_log -v 3.0 -p /home/vodenica/Desktop/test-network-smart-contracts/02-OPS-operations -l golang
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["", "createdBy", "{\"weather_drive_station_condition\": \"condition\", \"weather_drive_station_temperature\": \"temperature\", \"weather_drive_station_humidity\": \"humidity\"}", "{\"weather_return_station_condition\": \"condition\", \"weather_return_station_temperature\": \"temperature\", \"weather_return_station_humidity\": \"humidity\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "operations-start-time", "operations-end-time","10", "35", "2500", "25010", "no-comments"]}'
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["daily-ops-log-ID-0002", "createdBy", "{\"weather_drive_station_condition\": \"condition\", \"weather_drive_station_temperature\": \"temperature\", \"weather_drive_station_humidity\": \"humidity\"}", "{\"weather_return_station_condition\": \"condition\", \"weather_return_station_temperature\": \"temperature\", \"weather_return_station_humidity\": \"humidity\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "operations-start-time", "operations-end-time","10", "35", "2500", "25010", "no-comments"]}'
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["{\"weather_drive_station_condition\": \"condition\", \"weather_drive_station_temperature\": \"temperature\", \"weather_drive_station_humidity\": \"humidity\"}", "{\"weather_return_station_condition\": \"condition\", \"weather_return_station_temperature\": \"temperature\", \"weather_return_station_humidity\": \"humidity\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "operations-start-time", "operations-end-time","10", "35", "2500", "25010", "no-comments", "test"]}'
+
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["daily-ops-log-ID-0004", "{\"weather_drive_station_condition\": \"condition\", \"weather_drive_station_temperature\": \"temperature\", \"weather_drive_station_humidity\": \"humidity\"}", "{\"weather_return_station_condition\": \"condition\", \"weather_return_station_temperature\": \"temperature\", \"weather_return_station_humidity\": \"humidity\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "operations-start-time", "operations-end-time","10", "35", "2500", "25010", "no-comments"]}'
+
+
+
+./network.sh deployCC -ccn daily_ops_log_v2 -ccv 1.1 -ccp /home/vodenica/Desktop/test-network-smart-contracts/02-OPS-operations -ccl go
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log_v2 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["daily-ops-log-ID-0002", "createdBy", "{\"weather_drive_station_condition\": \"condition\", \"weather_drive_station_temperature\": \"temperature\", \"weather_drive_station_humidity\": \"humidity\"}", "{\"weather_return_station_condition\": \"condition\", \"weather_return_station_temperature\": \"temperature\", \"weather_return_station_humidity\": \"humidity\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "operations-start-time", "operations-end-time","10", "35", "2500", "25010", "no-comments"]}'
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log_v2 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetDailyOperationsLogHistory","Args":["daily-ops-log-ID-0002"]}'
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log_v2 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetAllDailyOperationsLogs","Args":[]}'
+
+
+peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log_v2 --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["QueryDailyOperationsLog","{\"selector\":{\"owner\":\"createdBy\"}}" ]}'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

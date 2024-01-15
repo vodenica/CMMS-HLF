@@ -1,0 +1,8 @@
+{
+    "index":{
+        "fields":["docType","daily_ops_log_id"]
+    },
+    "ddoc":"indexDailyOperationsLogIDDoc", 
+    "name":"indexDailyOperationsLogID",
+    "type":"json"
+}
