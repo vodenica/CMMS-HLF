@@ -1,0 +1,86 @@
+test:
+  name: Maintenance Operations
+  description: A test benchmark for testing the Maintenance Operations Smart Contract
+  workers:
+    type: local
+    number: 5 # the number of workers is 5, because the test is designed to be run in parallel as 5 workers can create the maintenance work orders.
+  rounds:
+  ###############################################################################################
+    - label: Creating Preventive Maintenance Work Orders 
+      # I've tested with 10, 50, 100, 200, 500 transactions; 
+      description: Creating Preventive Work Orders benchmark 
+      txNumber: 10 # transactions for each worker (5 workers in total); Example: 5000tx/5workers=1000tx/worker; 1000tx/50tx/sec=20sec; 1000tx/100tx/sec=10sec; 1000tx/200tx/sec=5sec; 1000tx/500tx/sec=2sec; 1000tx/1000tx/sec=1sec; 1000tx/2000tx/sec=0.5sec; 1000tx/5000tx/sec=0.2sec; 1000tx/10000tx/sec=0.1sec;
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 500 # transactions per second; I've tested with 10, 50, 100, 200, and 500 tx/sec as a transaction load; transactionLoad is define as tx/sec. and represents the number of transactions that will be sent to the network per second; Batch size for this network is 50tx/sec, so we can send 50tx/sec to the network.
+      workload:
+        module: benchmarks/samples/fabric/maintenance/createPreventiveWorkOrder.js
+        arguments:
+          contractId: maintenance # the name of the smart contract; the smart contract is defined in the network configuration file (test-network.yaml) under the "contracts" section.
+
+    - label: Reading Created Preventive Work Orders
+      description: Read Preventive Work Orders benchmark
+      txDuration: 60 # seconds
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 50  # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/maintenance/readPreventiveWorkOrders.js
+        arguments:
+          assets: 10 # number of assets to read per transaction
+          contractId: maintenance
+
+  ###############################################################################################
+    - label: Creating Corrective Maintenance Work Orders
+      description: Creating Corrective Work Orders benchmark 
+      txNumber: 10 # transactions
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 500 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/maintenance/createCorrectiveWorkOrder.js
+        arguments:
+          contractId: maintenance
+
+    - label: Reading Created Corrective Work Orders
+      description: Read Corrective Work Orders benchmark
+      txDuration: 60 # seconds
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 10 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/maintenance/readCorrectiveWorkOrders.js
+        arguments:
+          assets: 10 # number of assets to read per transaction
+          contractId: maintenance
+
+  ###############################################################################################
+    - label: Creating Failure Maintenance Work Orders
+      description: Creating Failure Work Orders benchmark 
+      txNumber: 10 # transactions
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 500 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/maintenance/createFailureWorkOrder.js
+        arguments:
+          contractId: maintenance
+
+    - label: Reading Created Failure Work Orders
+      description: Read Failure Work Orders benchmark
+      txDuration: 60 # seconds
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 10 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/maintenance/readFailureWorkOrders.js
+        arguments:
+          assets: 10 # number of assets to read per transaction
+          contractId: maintenance      
+

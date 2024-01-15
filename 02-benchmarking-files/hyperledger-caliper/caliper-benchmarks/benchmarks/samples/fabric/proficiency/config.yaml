@@ -1,0 +1,36 @@
+test:
+  name: Proficiency Operations
+  description: A test benchmark for testing the Proficiency Operations Smart Contract
+  workers:
+    type: local
+    # number of workers to run the test shall be 1, because the test is not designed 
+    # to be run in parallel as only one worker can create the daily operations log.
+    number: 5
+  rounds:
+    - label: Creating Proficiency Module One Training
+      # 5000 transactions should create around 100 cars per worker but not guaranteed
+      # so need to set asset limits to less than 1000 for the other tests
+      # I've tested with 10, 50, 100, and 200 transactions.
+      description: Creating Module One Training
+      txNumber: 200 # transactions
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 200 # transactions per second 10, 50, 100, 200tx/sec.
+      workload:
+        module: benchmarks/samples/fabric/proficiency/createModuleOneTraining.js
+        arguments:
+          contractId: proficiency
+
+    - label: Reading Created Proficiency Training Module One
+      description: Read Created Proficiency Training Module One benchmark
+      txDuration: 30 # seconds
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 10 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/proficiency/readModuleOneTraining.js
+        arguments:
+          assets: 10 # number of assets to read per transaction
+          contractId: proficiency

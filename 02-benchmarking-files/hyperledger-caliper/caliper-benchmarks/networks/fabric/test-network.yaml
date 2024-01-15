@@ -1,0 +1,44 @@
+name: Caliper Benchmarks
+version: "2.0.0"
+
+caliper:
+  blockchain: fabric
+  sutOptions:
+    networkConfig: networks/fabric/test-network.yaml
+    # path to the fabric-cli binary
+    cli: ../fabric-samples/bin/peer
+    # path to the fabric-ca-client binary
+    caClient: ../fabric-samples/bin/fabric-ca-client
+    chaincodeId: finance
+    channel: mychannel
+    contractId: finance
+    mutualTls: true
+
+channels:
+  # channelName of mychannel matches the name of the channel created by test network
+  - channelName: mychannel
+    # the chaincodeIDs of all the fabric chaincodes in caliper-benchmarks
+    contracts:
+    - id: health_and_safety_smart_contract
+    - id: daily_ops_log
+    - id: maintenance
+    - id: proficiency
+    - id: finance
+    - id: organisation
+
+organizations:
+  - mspid: Org1MSP
+    # Identities come from cryptogen created material for test-network
+    identities:
+      certificates:
+      - name: 'User1'
+      # I've added full path to the in "keystore"folder;
+      # File name for the "clientPrivateKey" which I found in the folder "keystore" must be always updated whenever you start new "fabric-test-network"; 
+      # Also, for the "clientSignCerts" part, I've adjusted the name of the file as it is in the folder, and has a name "cert.pem".
+        clientPrivateKey:
+          path: '/home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/[clientPrivateKey]'
+        clientSignedCert:
+          path: '../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem'
+    connectionProfile:
+      path: '../fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.yaml'
+      discover: true

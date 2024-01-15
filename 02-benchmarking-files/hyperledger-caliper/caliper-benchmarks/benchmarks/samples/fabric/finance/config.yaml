@@ -1,0 +1,90 @@
+test:
+  name: Financial Operations
+  description: A test benchmark for testing the Financial Operations Smart Contract
+  workers:
+    type: local
+    # number of workers to run the test shall be 1, because the test is not designed 
+    # to be run in parallel as only one worker can create the daily operations log.
+    number: 5
+  rounds:
+    - label: Creating Purchase Order Requests
+      # 5000 transactions should create around 100 cars per worker but not guaranteed
+      # so need to set asset limits to less than 1000 for the other tests
+      # I've tested with 10, 50, 100, and 200 transactions.
+      description: Creating Purchase Order Requests Benchmark
+      txNumber: 500 # transactions
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 200 # transactions per second; 10 tx/s * 5 workers = 50 tx/s; 10, 50, 100, 200 tx/s will be tested
+      workload:
+        module: benchmarks/samples/fabric/finance/createPurchaseOrder.js
+        arguments:
+          contractId: finance
+
+    - label: Reading Purchase Order Requests
+      description: Read Created Purchase Order Request Benchmark
+      txDuration: 30 # seconds
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 10 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/finance/readPurchaseOrder.js
+        arguments:
+          assets: 10 # number of assets to read per transaction
+          contractId: finance
+
+    ##############################################################################
+
+    - label: Creating Invoice for Operational Services
+      description: Creating Invoices for Operational Services Benchmark
+      txNumber: 500 # transactions
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 200 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/finance/createOperationalInvoice.js
+        arguments:
+          contractId: finance
+
+    - label: Reading Invoices for Operational Services
+      description: Read Created Invoice for Operational Services Benchmark
+      txDuration: 30 # seconds
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 10 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/finance/readOperationalInvoice.js
+        arguments:
+          assets: 10 # number of assets to read per transaction
+          contractId: finance
+
+    ##############################################################################
+
+    - label: Creating Invoice for Additional Work Services
+      description: Creating Invoices for Additional Work Services Benchmark
+      txNumber: 500 # transactions
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 200 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/finance/createAdditionalWorkInvoice.js
+        arguments:
+          contractId: finance
+
+    - label: Reading Invoices for Additional Work Services
+      description: Read Created Invoice for Additional Work Services Benchmark
+      txDuration: 30 # seconds
+      rateControl: 
+          type: "fixed-load" 
+          opts:
+            transactionLoad: 10 # transactions per second
+      workload:
+        module: benchmarks/samples/fabric/finance/readAdditionalWorkInvoice.js
+        arguments:
+          assets: 10 # number of assets to read per transaction
+          contractId: finance
