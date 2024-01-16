@@ -4,7 +4,7 @@
 
 An enterprise's Health and Safety management processes are generally called a Health and Safety Management System (HSMS). It is a set of processes and procedures that help an organization manage its health and safety risks. It can identify, assess, control and monitor health and safety risks. While an HSMS aims to prevent workplace injuries, illnesses, and deaths, the processes and procedures used can vary between enterprises based on their needs and requirements.
 
-Health and Safety management processes within an enterprise are generally referred to as a Health and Safety Management System (HSMS). It is a set of processes and procedures that help an organization manage its health and safety risks. It can be used to identify, assess, control and monitor health and safety risks. While an HSMS aims to prevent workplace injuries, illnesses, and deaths, the specific processes and procedures used can vary between enterprises based on their particular needs and requirements.
+The `chaincode` for Health & Safet processess can be access [here](../05-safety-management)
 
 ### Repo `fabric-contract-api-go`
 [For the **fabric-contract-api-go** details on this link](https://github.com/hyperledger/fabric-contract-api-go/tree/main/tutorials)
