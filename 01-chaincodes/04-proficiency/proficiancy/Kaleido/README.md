@@ -1,3 +1,5 @@
+[Back to proficiency chaincode](../proficiancy/README.md)
+
 # Kaleido platform
 
 Starting with the installation of the chaincode on the platform Kaleido
