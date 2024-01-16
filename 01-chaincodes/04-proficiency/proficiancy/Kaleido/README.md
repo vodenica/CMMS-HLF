@@ -1,4 +1,4 @@
-[Back to proficiency chaincode](../proficiancy/README.md)
+[Back to proficiency chaincode](../README.md)
 
 # Kaleido platform
 
