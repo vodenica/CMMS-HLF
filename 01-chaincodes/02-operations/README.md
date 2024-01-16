@@ -2,7 +2,7 @@
 
 # Operations Services Chaincode
 
-The Operations (OPS) services is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the daily operations, also called the `Daily Operations Log`. The `Daily Operations Log` is a record of the daily operations of the ropeway. The `Daily Operations Log` is created by the `Shift Manager` and is validated by the `Maintenance Supervisor`. The `Daily Operations Log` is created at the beginning of the shift and is updated at the end of the shift. The `Daily Operations Log` is updated with the following information:
+The Operations (OPS) services [chaincode](../02-operations) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the daily operations, also called the `Daily Operations Log`. The `Daily Operations Log` is a record of the daily operations of the ropeway. The `Daily Operations Log` is created by the `Shift Manager` and is validated by the `Maintenance Supervisor`. The `Daily Operations Log` is created at the beginning of the shift and is updated at the end of the shift. The `Daily Operations Log` is updated with the following information:
 
 ## Testing platforms
 * Hyperledger Fabric `test-network` with `Caliper` benchmarking testing framework ([`Caliper Testing`](#caliper-testing) & [`Test Network`](#test-network)).
