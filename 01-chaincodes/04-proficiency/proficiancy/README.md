@@ -2,7 +2,7 @@
 
 # Proficiency Services Chaincode
 
-Proficiency services [chaincode](../04-proficiency/proficiamcy) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the training, custom training and assessment of the employee. I've used a complex smart contract repository from [fabric-contract-api-go](https://github.com/vodenica/fabric-contract-api-go.git) to create a proficiency chaincode.
+Proficiency services [chaincode](../04-proficiency/proficiency) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the training, custom training and assessment of the employee. I've used a complex smart contract repository from [fabric-contract-api-go](https://github.com/vodenica/fabric-contract-api-go.git) to create a proficiency chaincode.
 The smart contracts or chaincodes are also considered assessment parts, where smart contracts are used to update the state of the ledger with the results of the assessments, both theoretical and practical. Also, the total value is added to determine if the employee passes the evaluations from the dedicated model.
 Chaincode is tested on the [Kaleido](https://www.kaleido.io/) platform, and details of how these tests are performed can be found [here](Kaleido/README.md).
 
