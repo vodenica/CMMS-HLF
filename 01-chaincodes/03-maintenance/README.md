@@ -2,7 +2,7 @@
 
 # Maintenance Services Chaincode
 
-The maintenance (MTE) business process is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the daily maintenance operations, which will include `preventive`, `corrective` and `failure` maintenance work orders.
+The maintenance (MTE) business process [chaincode](../03-maintenance) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the daily maintenance operations, which will include `preventive`, `corrective` and `failure` maintenance work orders.
 
 - [Preventive maintenance work orders](#preventive-maintenance-work-orders) - Preventive maintenance triggered by date or by operating hours.
 - [Corrective maintenance work orders](#corrective-maintenance-work-orders) - Corrective maintenance triggered by fault or request followed by findings.
