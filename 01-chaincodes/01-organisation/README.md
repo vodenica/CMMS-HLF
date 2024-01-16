@@ -441,6 +441,16 @@ Response body in `JSON` format:
   }
 ]
 ```
+## Test network measurement results
+
+The measurement results are shown below:
+
+![Average Latency](../../../CMMS-HLF-Git-repo/05-plots/org/01-avg-latency-v3.png)
+
+![Throughput](../../../CMMS-HLF-Git-repo/05-plots/org/02-throughput-v3.png)
+
+![Throughput Read](../../../CMMS-HLF-Git-repo/05-plots/org/03-throughput-read-v3.png)
+
 [Back to top](#organisation-services-chaincode)
 
 # Kaleido Testing
