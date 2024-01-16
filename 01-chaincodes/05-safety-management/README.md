@@ -4,14 +4,14 @@
 
 An enterprise's Health and Safety management processes are generally called a Health and Safety Management System (HSMS). It is a set of processes and procedures that help an organization manage its health and safety risks. It can identify, assess, control and monitor health and safety risks. While an HSMS aims to prevent workplace injuries, illnesses, and deaths, the processes and procedures used can vary between enterprises based on their needs and requirements.
 
-The `chaincode` for Health & Safet processess can be access [here](../05-safety-management)
+The `chaincode` for Health & Safet processess can be accessed [here](../05-safety-management)
 
 ### Repo `fabric-contract-api-go`
 [For the **fabric-contract-api-go** details on this link](https://github.com/hyperledger/fabric-contract-api-go/tree/main/tutorials)
 
 ### Health and Safety Records required by NEBOSH
 
-[NEBOSH](https://www.nebosh.org.uk/documents/ng-guide-for-lp/) (National Examination Board in Occupational Safety and Health) is an internationally recognized qualification for health and safety professionals. Per the search results, a NEBOSH Health and Safety Audit is a key tool to assess workplace safety and identify potential hazards. It helps gather evidence through interviews, inspections, and audits by qualified health and safety auditors. NEBOSH qualifications are essential for any small business from a health and safety point of view. Pursuing a NEBOSH qualification can demonstrate an individual's commitment to health and safety, and assist employers in monitoring, auditing, and evaluating health and safety performance in the workplace.
+[NEBOSH](https://www.nebosh.org.uk/documents/ng-guide-for-lp/) (National Examination Board in Occupational Safety and Health) is an internationally recognized qualification for health and safety professionals. Per the search results, a NEBOSH Health and Safety Audit is a key tool to assess workplace safety and identify potential hazards. It helps gather evidence through interviews, inspections, and audits by qualified health and safety auditors. NEBOSH qualifications are essential for any small business from a health and safety point of view. Pursuing a NEBOSH qualification can demonstrate an individual's commitment to health and safety and assist employers in monitoring, auditing, and evaluating health and safety performance in the workplace.
 
 In this Health and Safety module, some of the key records that an organization must have according to NEBOSH include:
 
