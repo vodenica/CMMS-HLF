@@ -7,10 +7,12 @@ Creating smart contract(s) for the financial services of a company shall support
 
 - The setting of the company’s broad financial strategy.
 - Budget and Cost Controlling.
-- Data modeling for Financial planning and reporting.
+- Data modelling for Financial planning and reporting.
 - Decisions on significant capital expenditure on new assets.
 - Interpretation and implications of macro and micro economic-financial developments for the enterprise.
 - Importance for the company of Government economic and fiscal (tax) legislation and proposals.
+
+The chaincode for the Financial services of an enterprise can be accessed [here](../fin-chaincode).
 
 ## Testing platforms
 * Hyperledger Fabric `test-network` with `Caliper` benchmarking testing framework ([`Caliper Testing`](#caliper-testing) & [`Test Network`](#test-network)).
