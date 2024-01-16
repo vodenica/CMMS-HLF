@@ -160,5 +160,5 @@ print(p)
 ```
 ## Plotting the results
 
-The plots are saved as PNG files and can be found in the `05-Plots/mte` folder. The plots are also shown below only for the `maintenance` chaincode.
+The plots are saved as PNG files and can be found in the [05-plots](../05-plots) folder. The plots are also shown below only for the `maintenance` chaincode.
 
