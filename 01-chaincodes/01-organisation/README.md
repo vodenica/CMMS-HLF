@@ -2,7 +2,7 @@
 
 # Organisation Services Chaincode
 
-Organization (ORG) services chaincode is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the company employees. These records consist of general employee information and the current status within the company. The current position within the company has a task to show the employee's performance and current competency status.
+Organization (ORG) services [chaincode](../01-organisation) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the company employees. These records consist of general employee information and the current status within the company. The current position within the company has a task to show the employee's performance and current competency status.
 
 ## Testing platforms
 * Hyperledger Fabric `test-network` with `Caliper` benchmarking testing framework ([`Caliper Testing`](#caliper-testing) & [`Test Network`](#test-network)).
