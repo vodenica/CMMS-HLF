@@ -445,7 +445,7 @@ Response body in `JSON` format:
 
 The measurement results are shown below:
 
-![Average Latency](../../../CMMS-HLF/05-plots/org/01-avg-latency-v3.png)
+![Average Latency](../../05-plots/org/01-avg-latency-v3.png)
 
 ![Throughput](../../../CMMS-HLF-Git-repo/05-plots/org/02-throughput-v3.png)
 
