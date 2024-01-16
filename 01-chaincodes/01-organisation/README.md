@@ -447,9 +447,9 @@ The measurement results are shown below:
 
 ![Average Latency](../../05-plots/org/01-avg-latency-v3.png)
 
-![Throughput](../../../CMMS-HLF-Git-repo/05-plots/org/02-throughput-v3.png)
+![Throughput](../../05-plots/org/02-throughput-v3.png)
 
-![Throughput Read](../../../CMMS-HLF-Git-repo/05-plots/org/03-throughput-read-v3.png)
+![Throughput Read](../../05-plots/org/03-throughput-read-v3.png)
 
 [Back to top](#organisation-services-chaincode)
 
