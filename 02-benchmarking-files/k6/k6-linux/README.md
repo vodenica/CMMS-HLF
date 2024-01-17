@@ -67,6 +67,163 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 
 
 
+___
+
+Here is the HTML code for the table:
+
+```html
+<table>
+  <tr>
+    <th>Chaincode</th>
+    <th>Chaincode Definition</th>
+    <th>Data received</th>
+    <th>Data sent</th>
+    <th>Avg. Latency</th>
+    <th>Total requests</th>
+    <th>Requests rate</th>
+    <th>Failed</th>
+    <th>Failed</th>
+    <th>p(95)</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Organisational Chaincode*</td>
+    <td>Adding a new employee to the organisation.</td>
+    <td>666</td>
+    <td>405</td>
+    <td>0.80</td>
+    <td>751</td>
+    <td>12.3626/s</td>
+    <td>0.13</td>
+    <td>1</td>
+    <td>870.02</td>
+  </tr>
+  <tr>
+    <td colspan="9"></td>
+  </tr>
+  <tr>
+    <td rowspan="2">Operational Chaincode*</td>
+    <td>Creating a new daily operations log.</td>
+    <td>707</td>
+    <td>1000</td>
+    <td>0.75</td>
+    <td>804</td>
+    <td>13.2384/s</td>
+    <td>4.60</td>
+    <td>37</td>
+    <td>847.23</td>
+  </tr>
+  <tr>
+    <td colspan="9"></td>
+  </tr>
+  <tr>
+    <td rowspan="3">Maintenance Chaincode*</td>
+    <td>Creating preventive work orders.</td>
+    <td>755</td>
+    <td>1800</td>
+    <td>0.76</td>
+    <td>789</td>
+    <td>12.9931/s</td>
+    <td>0.38</td>
+    <td>3</td>
+    <td>824.78</td>
+  </tr>
+  <tr>
+    <td>Creating corrective orders.</td>
+    <td>649</td>
+    <td>1100</td>
+    <td>0.83</td>
+    <td>721</td>
+    <td>11.8730/s</td>
+    <td>1.38</td>
+    <td>10</td>
+    <td>971.13</td>
+  </tr>
+  <tr>
+    <td colspan="9"></td>
+  </tr>
+  <tr>
+    <td rowspan="2">Proficiency Chaincode*</td>
+    <td>Creating training Module One.</td>
+    <td>725</td>
+    <td>1100</td>
+    <td>0.73</td>
+    <td>822</td>
+    <td>13.5449/s</td>
+    <td>0.12</td>
+    <td>1</td>
+    <td>817.56</td>
+  </tr>
+  <tr>
+    <td colspan="9"></td>
+  </tr>
+  <tr>
+    <td rowspan="3">Health & Safety Chaincode**</td>
+    <td>Creating incident and accident reports.</td>
+    <td>616</td>
+    <td>690</td>
+    <td>0.42</td>
+    <td>714</td>
+    <td>11.8308/s</td>
+    <td>0.00</td>
+    <td>0</td>
+    <td>484.55</td>
+  </tr>
+  <tr>
+    <td>Creating risk assessments.</td>
+    <td>539</td>
+    <td>158</td>
+    <td>0.48</td>
+    <td>621</td>
+    <td>10.2629/s</td>
+    <td>0.00</td>
+    <td>0</td>
+    <td>596.36</td>
+  </tr>
+  <tr>
+    <td colspan="9"></td>
+  </tr>
+  <tr>
+    <td rowspan="4">Financial Chaincode**</td>
+    <td>Creating purchase order.</td>
+    <td>577</td>
+    <td>748</td>
+    <td>0.49</td>
+    <td>608</td>
+    <td>10.0534/s</td>
+    <td>1.15</td>
+    <td>7</td>
+    <td>589.29</td>
+  </tr>
+  <tr>
+    <td>Creating operational invoices.</td>
+    <td>524</td>
+    <td>205</td>
+    <td>0.49</td>
+    <td>608</td>
+    <td>10.0631/s</td>
+    <td>1.15</td>
+    <td>7</td>
+    <td>576.20</td>
+  </tr>
+  <tr>
+    <td>Creating invoices for additional work.</td>
+    <td>533</td>
+    <td>548</td>
+    <td>0.48</td>
+    <td>620</td>
+    <td>10.2148/s</td>
+    <td>1.93</td>
+    <td>12</td>
+    <td>593.84</td>
+  </tr>
+  <tr>
+    <td colspan="9"></td>
+  </tr>
+</table>
+```
+
+
+
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
 
 [Back to the main page.](../../../README.md)
