@@ -44,9 +44,10 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 
 <table>
   <style>
-td {
-  text-align: center;
-}
+    td {
+      text-align: center;
+    }
+  </style>
   <tr>
     <th rowspan="2">Chaincode</th>
     <th rowspan="2">Chaincode Definition</th>
