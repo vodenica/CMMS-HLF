@@ -547,7 +547,7 @@ npx caliper launch manager --caliper-workspace ./ --caliper-networkconfig networ
 
 ## Test network measurement results
 
-The measurement results are shown below:
+The measurement results are shown below for the function `AddNewEmployee`:
 
 ![Average Latency](../../05-plots/org/01-avg-latency-v3.png)
 
