@@ -360,7 +360,7 @@ Ensure you are in the `caliper-benchmarks` directory. If not, navigate to the `c
 cd /home/vodenica/go/src/github.com/hyperledger/caliper-benchmarks
 ```
 
-Go to the folder where workload files are stored and open the folder in IDE with command `code .`:
+Go to the folder where workload files are stored and open the folder in IDE with the command `code .`:
   
   ```bash
   cd /home/vodenica/go/src/github.com/hyperledger/caliper-benchmarks/benchmarks/samples/fabric/daily-ops-log
