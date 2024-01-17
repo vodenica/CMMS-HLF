@@ -107,6 +107,47 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">10</td>
     <td align="center">971.13</td>
   </tr>
+  <tr>
+    <td align="left">Proficiency Chaincode*</td>
+    <td align="left">Creating training Module One.</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="2">Health & Safety Chaincode**</td>
+    <td align="left">Creating incident and accident reports.</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+  </tr>
+  <tr>
+    <td align="left">Creating risk assessments.</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+  </tr>
   <!-- Add rows here -->
 </table>
 
