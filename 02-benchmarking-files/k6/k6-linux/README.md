@@ -42,6 +42,31 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 |  | Creating operational invoices. | 524 | 8.7 | 0.49 | 608 | 10.0631/s | 1.15 | 7 | 576.20 |
 |  | Creating invoices for additional work. | 533 | 8.8 | 0.48 | 620 | 10.2148/s | 1.93 | 12 | 593.84 |
 
+<table>
+  <tr>
+    <th rowspan="2">Chaincode</th>
+    <th rowspan="2">Chaincode Definition</th>
+    <th colspan="2">Data received</th>
+    <th colspan="2">Data sent</th>
+    <th rowspan="2">Avg. Latency</th>
+    <th rowspan="2">Total requests</th>
+    <th rowspan="2">Requests rate</th>
+    <th colspan="2">Failed</th>
+    <th rowspan="2">p(95)</th>
+  </tr>
+  <tr>
+    <td>[kB]</td>
+    <td>[kB/s]</td>
+    <td>[kB]</td>
+    <td>[kB/s]</td>
+    <td>[%]</td>
+    <td>[#]</td>
+  </tr>
+  <!-- Add rows here -->
+</table>
+
+
+
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
 
 [Back to the main page.](../../../README.md)
