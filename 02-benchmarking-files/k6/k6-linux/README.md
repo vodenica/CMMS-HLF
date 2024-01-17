@@ -19,9 +19,13 @@ or
 ```bash
 k6 run --vus 10 --duration 60s [file_name].js
 ```
-The results of the load tests are in the `k6-results` folder. Also, you can see the results in your terminal as shown below
+As seen in one sample in the picture below, K6 generates and presents a thorough summary of the aggregated results at the end of a test.
 
 ![k6 results](../../../05-plots/images/01-ops.png)
+
+The `k6` load testing results are comprehensively compiled from end-of-test summary reports for each chaincode function. These reports detail aggregate statistics for the primary aspects of the test. As illustrated in the subsequent tables: 
+* A single table represents the test results for a single region and 
+* Three separate tables depict the test results for three distinct regions.
 
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
 
