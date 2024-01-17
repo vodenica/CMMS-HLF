@@ -69,6 +69,23 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">1</td>
     <td align="center">870.02</td>
   </tr>
+  <tr>
+    <td colspan="12"></td>
+  </tr>
+  <tr>
+    <td align="left">Operational Chaincode*</td>
+    <td align="left">Creating a new daily operations log.</td>
+    <td align="center">707</td>
+    <td align="center">12</td>
+    <td align="center">1000</td>
+    <td align="center">17</td>
+    <td align="center">0.75</td>
+    <td align="center">804</td>
+    <td align="center">13.2384/s</td>
+    <td align="center">4.60</td>
+    <td align="center">37</td>
+    <td align="center">847.23</td>
+  </tr>
   <!-- Add rows here -->
 </table>
 
