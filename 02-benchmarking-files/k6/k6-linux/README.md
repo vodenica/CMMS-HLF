@@ -148,6 +148,46 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">x</td>
     <td align="center">x</td>
   </tr>
+  <tr>
+    <td align="left" rowspan="3">Financial Chaincode**</td>
+    <td align="left">Creating purchase order.</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+  </tr>
+  <tr>
+    <td align="left">Creating operational invoices.</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+  </tr>
+  <tr>
+    <td align="left">Creating invoices for additional work.</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+    <td align="center">x</td>
+  </tr>
   <!-- Add rows here -->
 </table>
 
