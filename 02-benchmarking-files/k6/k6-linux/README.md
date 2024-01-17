@@ -197,6 +197,8 @@ Note:
 * `*` represents ten (10) users.
 *  `**` represents five (5) users.
 *  `***` the 95th percentile represents a value below which 95% of the data points fall.
+
+[Back on top](#running-the-load-tests)
 ___
 
 ### Table 2 - Multi region summary for SE region
