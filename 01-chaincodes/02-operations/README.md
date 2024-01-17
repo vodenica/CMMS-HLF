@@ -385,15 +385,15 @@ The measurement results are shown below:
 
 ![Average Latency](../../05-plots/ops/01-avg-latency-v2.png)
 
-_**Figure 1**_ - Operational chaincode benchmarking parameters: Impact the number of transactions on average latency.
+_**Figure 1**_ - Operational chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
 
 ![Throughput](../../05-plots/ops/02-throughput-v2.png)
 
-_**Figure 2**_ - Operational chaincode benchmarking parameters: Impact the number of transactions on throughput.
+_**Figure 2**_ - Operational chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
 
 ![Throughput Read](../../05-plots/ops/03-throughput-read-v2.png)
 
-_**Figure 3**_ - Operational chaincode benchmarking parameters: Impact the number of transactions on throughput put for the “Read” function.
+_**Figure 3**_ - Operational chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
 
 [Back to top](#operations-services-chaincode)
 
