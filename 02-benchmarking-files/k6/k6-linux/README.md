@@ -111,43 +111,43 @@ The table shows the `end-of-test` summary for the load test in a single region e
   <tr>
     <td align="left">Proficiency Chaincode*</td>
     <td align="left">Creating training Module One.</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
+    <td align="center">725</td>
+    <td align="center">12</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.73</td>
+    <td align="center">822</td>
+    <td align="center">13.5449/s</td>
+    <td align="center">0.12</td>
+    <td align="center">1</td>
+    <td align="center">817.56</td>
   </tr>
   <tr>
     <td align="left" rowspan="2">Health & Safety Chaincode**</td>
     <td align="left">Creating incident and accident reports.</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
+    <td align="center">616</td>
+    <td align="center">10</td>
+    <td align="center">690</td>
+    <td align="center">11</td>
+    <td align="center">0.42</td>
+    <td align="center">714</td>
+    <td align="center">11.8308/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">484.55</td>
   </tr>
   <tr>
     <td align="left">Creating risk assessments.</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
+    <td align="center">539</td>
+    <td align="center">8.9</td>
+    <td align="center">158</td>
+    <td align="center">2.6</td>
+    <td align="center">0.48</td>
+    <td align="center">621</td>
+    <td align="center">10.2629/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">596.36</td>
   </tr>
   <tr>
     <td align="left" rowspan="3">Financial Chaincode**</td>
