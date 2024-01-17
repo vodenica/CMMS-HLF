@@ -191,8 +191,11 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
   <!-- Add rows here -->
 </table>
 ___
+
 **Table 2** - Multi region `end-of-the-test` summary (_SE - region_)
+
 **Table 3** - Multi region `end-of-the-test` summary (_FR - region_)
+
 **Table 4** - Multi region `end-of-the-test` summary (_OH - region_)
 
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
