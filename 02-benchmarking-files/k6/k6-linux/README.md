@@ -34,7 +34,7 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 | Organisational Chaincode* | Adding a new employee to the organisation. | 666 | 11 | 0.80 | 751 | 12.3626/s | 0.13 | 1 | 870.02 |
 | Operational Chaincode* | Creating a new daily operations log. | 707 | 12 | 0.75 | 804 | 13.2384/s | 4.60 | 37 | 847.23 |
 | Maintenance Chaincode* | Creating preventive work orders. | 755 | 12 | 0.76 | 789 | 12.9931/s | 0.38 | 3 | 824.78 |
-|  | Creating preventive, corrective orders. | 649 | 11 | 0.83 | 721 | 11.8730/s | 1.38 | 10 | 971.13 |
+|  | Creating corrective orders. | 649 | 11 | 0.83 | 721 | 11.8730/s | 1.38 | 10 | 971.13 |
 | Proficiency Chaincode* | Creating training Module One. | 725 | 12 | 0.73 | 822 | 13.5449/s | 0.12 | 1 | 817.56 |
 | Health & Safety Chaincode** | Creating incident and accident reports. | 616 | 10 | 0.42 | 714 | 11.8308/s | 0.00 | 0 | 484.55 |
 |  | Creating risk assessments. | 539 | 8.9 | 0.48 | 621 | 10.2629/s | 0.00 | 0 | 596.36 |
