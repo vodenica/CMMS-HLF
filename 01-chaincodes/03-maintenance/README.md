@@ -900,15 +900,15 @@ The measurement results are shown below:
 
 ![Average Latency](../../05-plots/mte/03-mte-corr-avg-latency-v2.png)
 
-**Figure 1** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+**Figure 4** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
 
 ![Throughput](../../05-plots/mte/04-mte-corr-throughput-v2.png)
 
-**Figure 2** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+**Figure 5** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
 
 ![Throughput Read](../../05-plots/mte/06-mte-corr-read-throughput-v2.png)
 
-**Figure 3** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+**Figure 6** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
 
 [Back to top](#testing-platforms)
 
