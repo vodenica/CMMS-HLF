@@ -39,7 +39,7 @@ The table shows the `end-of-test` summary for the load test in a single region e
     <th align="center" colspan="1">Total requests</th>
     <th align="center" colspan="1">Requests rate</th>
     <th align="center" colspan="2">Failed</th>
-    <th align="center" colspan="1">p(95)</th>
+    <th align="center" colspan="1">p(95)***</th>
   </tr>
   <tr>
     <td align="center">[kB]</td>
@@ -152,45 +152,50 @@ The table shows the `end-of-test` summary for the load test in a single region e
   <tr>
     <td align="left" rowspan="3">Financial Chaincode**</td>
     <td align="left">Creating purchase order.</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
+    <td align="center">577</td>
+    <td align="center">9.5</td>
+    <td align="center">748</td>
+    <td align="center">12</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0534/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">589.29</td>
   </tr>
   <tr>
     <td align="left">Creating operational invoices.</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
+    <td align="center">524</td>
+    <td align="center">8.7</td>
+    <td align="center">205</td>
+    <td align="center">3.4</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0631/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">576.20</td>
   </tr>
   <tr>
     <td align="left">Creating invoices for additional work.</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
-    <td align="center">x</td>
+    <td align="center">533</td>
+    <td align="center">8.8</td>
+    <td align="center">548</td>
+    <td align="center">9</td>
+    <td align="center">0.48</td>
+    <td align="center">620</td>
+    <td align="center">10.2148</td>
+    <td align="center">1.93</td>
+    <td align="center">12</td>
+    <td align="center">593.84</td>
   </tr>
   <!-- Add rows here -->
 </table>
+Note:
+* '*` represents ten (10) users.
+* `**` represents five (5) users.
+* `***` the 95th percentile represents a value below which 95% of the data points fall.
+
 
 ___
 
