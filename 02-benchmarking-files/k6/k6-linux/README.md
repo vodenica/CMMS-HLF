@@ -374,6 +374,7 @@ Note:
 *  `***` the 95th percentile represents a value below which 95% of the data points fall.
 
 [Back on top](#end-of-test-summary)
+
 ___
 
 ### Table 3 - Multi region summary for FR region
@@ -547,7 +548,8 @@ Note:
 *  `**` represents five (5) users.
 *  `***` the 95th percentile represents a value below which 95% of the data points fall.
 
-[Back on top](#end-of-test-summary)_
+[Back on top](#end-of-test-summary)
+
 __
 
 ### Table 4 - Multi region summary for OH region
@@ -722,6 +724,7 @@ Note:
 *  `***` the 95th percentile represents a value below which 95% of the data points fall.
 
 [Back on top](#end-of-test-summary)
+
 ___
 
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
