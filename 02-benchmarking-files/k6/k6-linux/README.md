@@ -185,7 +185,7 @@ The table shows the `end-of-test` summary for the load test in a single region e
     <td align="center">9</td>
     <td align="center">0.48</td>
     <td align="center">620</td>
-    <td align="center">10.2148</td>
+    <td align="center">10.2148/s</td>
     <td align="center">1.93</td>
     <td align="center">12</td>
     <td align="center">593.84</td>
