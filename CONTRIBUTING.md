@@ -1,3 +1,5 @@
+[Main page](README.md)
+
 ## Contributing
 
 We welcome contributions to the Hyperledger Fabric Project in many forms, and
