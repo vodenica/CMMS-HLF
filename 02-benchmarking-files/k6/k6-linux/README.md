@@ -73,16 +73,23 @@ Here is the HTML code for the table:
 
 <table>
   <tr>
-    <th>Chaincode</th>
-    <th>Chaincode Definition</th>
-    <th>Data received</th>
-    <th>Data sent</th>
-    <th>Avg. Latency</th>
-    <th>Total requests</th>
-    <th>Requests rate</th>
-    <th>Failed</th>
-    <th>Failed</th>
-    <th>p(95)</th>
+    <th rowspan="2">Chaincode</th>
+    <th rowspan="2">Chaincode Definition</th>
+    <th colspan="2">Data received</th>
+    <th colspan="2">Data sent</th>
+    <th rowspan="2">Avg. Latency</th>
+    <th rowspan="2">Total requests</th>
+    <th rowspan="2">Requests rate</th>
+    <th colspan="2">Failed</th>
+    <th rowspan="2">p(95)</th>
+  </tr>
+  <tr>
+    <td>[kB]</td>
+    <td>[kB/s]</td>
+    <td>[kB]</td>
+    <td>[kB/s]</td>
+    <td>[%]</td>
+    <td>[#]</td>
   </tr>
   <tr>
     <td rowspan="2">Organisational Chaincode*</td>
