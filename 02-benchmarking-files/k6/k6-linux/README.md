@@ -31,7 +31,7 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 <table>
   <tr>
     <th align="center" rowspan="2">Chaincode</th>
-    <th align="center" rowspan="2">Chaincode Definition</th>
+    <th align="center" rowspan="2">Chaincode Function</th>
     <th align="center" colspan="2">Data received</th>
     <th align="center" colspan="2">Data sent</th>
     <th align="center" colspan="1">Avg. Latency</th>
@@ -81,7 +81,7 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">847.23</td>
   </tr>
   <tr>
-    <td align="left">Maintenance Chaincode*</td>
+    <td align="left" rowspan="2">Maintenance Chaincode*</td>
     <td align="left">Creating preventive work orders.</td>
     <td align="center">755</td>
     <td align="center">12</td>
@@ -95,7 +95,6 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">824.78</td>
   </tr>
   <tr>
-    <td align="left">Maintenance Chaincode*</td>
     <td align="left">Creating corrective work orders.</td>
     <td align="center">649</td>
     <td align="center">11</td>
