@@ -27,7 +27,7 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 * A single table represents the test results for a single region and 
 * Three separate tables depict the test results for three distinct regions.
 
-** Table** - Single region
+**Table** - Single region `end-of-the-test` summary (SE - region)
 
 | Chaincode | Chaincode Definition | Data received [kB] | Data sent [kB/s] | Avg. Latency [s] | Total requests [#] | Requests rate [TPS rate] | Failed [%] | Failed [#] | p(95) [ms] |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
