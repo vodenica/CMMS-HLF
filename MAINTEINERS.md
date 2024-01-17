@@ -1,3 +1,5 @@
+[Main page](README.md)
+
 ## Maintainers <a name="maintainers"></a>
 
 Should you have any questions or concerns, please reach out to one of the project's [Maintainers](./MAINTAINERS.md).
