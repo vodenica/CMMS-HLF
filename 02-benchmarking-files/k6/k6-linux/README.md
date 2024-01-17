@@ -59,6 +59,8 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td>[kB/s]</td>
     <td>[kB]</td>
     <td>[kB/s]</td>
+    <td>[s]</td>
+    <td>[#]</td>
     <td>[%]</td>
     <td>[#]</td>
   </tr>
