@@ -444,24 +444,6 @@ Response body in `JSON` format:
 ```
 [Back to top](#organisation-services-chaincode)
 
-## Test network measurement results
-
-The measurement results are shown below:
-
-![Average Latency](../../05-plots/org/01-avg-latency-v3.png)
-
-_**Figure 1**_ - Organisational chaincode benchmarking parameters: Impact the number of transactions on average latency.
-
-![Throughput](../../05-plots/org/02-throughput-v3.png)
-
-_**Figure 2**_ - Organisational chaincode benchmarking parameters: Impact the number of transactions on throughput.
-
-![Throughput Read](../../05-plots/org/03-throughput-read-v3.png)
-
-_**Figure 3**_ - Organisational chaincode benchmarking parameters: Impact the number of transactions on throughput put for the “Read” function.
-
-[Back to top](#organisation-services-chaincode)
-
 # Kaleido Testing
 
 ## Kaleido platform
@@ -562,5 +544,24 @@ Execution:
 npx caliper launch manager --caliper-workspace ./ --caliper-networkconfig networks/fabric/test-network.yaml --caliper-benchconfig benchmarks/samples/fabric/organisation/config.yaml --caliper-flow-only-test --caliper-fabric-gateway-enabled
 ```
 [Back to top](#organisation-services-chaincode)
+
+## Test network measurement results
+
+The measurement results are shown below:
+
+![Average Latency](../../05-plots/org/01-avg-latency-v3.png)
+
+_**Figure 1**_ - Organisational chaincode benchmarking parameters: Impact the number of transactions on average latency.
+
+![Throughput](../../05-plots/org/02-throughput-v3.png)
+
+_**Figure 2**_ - Organisational chaincode benchmarking parameters: Impact the number of transactions on throughput.
+
+![Throughput Read](../../05-plots/org/03-throughput-read-v3.png)
+
+_**Figure 3**_ - Organisational chaincode benchmarking parameters: Impact the number of transactions on throughput put for the “Read” function.
+
+[Back to top](#organisation-services-chaincode)
+
 
 ### the end of the file.
