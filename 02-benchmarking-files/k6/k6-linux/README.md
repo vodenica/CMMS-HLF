@@ -31,14 +31,14 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 <table>
   <tr>
     <th align="center" rowspan="2">Chaincode</th>
-    <th align="center"rowspan="2">Chaincode Definition</th>
-    <th align="center"colspan="2">Data received</th>
-    <th align="center"colspan="2">Data sent</th>
-    <th align="center"colspan="1">Avg. Latency</th>
-    <th align="center"colspan="1">Total requests</th>
-    <th align="center"colspan="1">Requests rate</th>
-    <th align="center"colspan="2">Failed</th>
-    <th align="center"colspan="1">p(95)</th>
+    <th align="center" rowspan="2">Chaincode Definition</th>
+    <th align="center" colspan="2">Data received</th>
+    <th align="center" colspan="2">Data sent</th>
+    <th align="center" colspan="1">Avg. Latency</th>
+    <th align="center" colspan="1">Total requests</th>
+    <th align="center" colspan="1">Requests rate</th>
+    <th align="center" colspan="2">Failed</th>
+    <th align="center" colspan="1">p(95)</th>
   </tr>
   <tr>
     <td align="center">[kB]</td>
@@ -93,6 +93,20 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">0.38</td>
     <td align="center">3</td>
     <td align="center">824.78</td>
+  </tr>
+  <tr>
+    <td align="left">Maintenance Chaincode*</td>
+    <td align="left">Creating corrective work orders.</td>
+    <td align="center">649</td>
+    <td align="center">11</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.83</td>
+    <td align="center">721</td>
+    <td align="center">11.8730/s</td>
+    <td align="center">1.38</td>
+    <td align="center">10</td>
+    <td align="center">971.13</td>
   </tr>
   <!-- Add rows here -->
 </table>
