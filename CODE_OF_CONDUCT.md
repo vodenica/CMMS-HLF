@@ -1,3 +1,5 @@
+[Main page](../../README.md)
+
 Code of Conduct Guidelines
 ==========================
 
