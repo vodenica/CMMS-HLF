@@ -631,3 +631,34 @@ Execute the command to start the test:
 npx caliper launch manager --caliper-workspace ./ --caliper-networkconfig networks/fabric/test-network.yaml --caliper-benchconfig benchmarks/samples/fabric/health-and-safety/config.yaml --caliper-flow-only-test --caliper-fabric-gateway-enabled
 ```
 [Back to top](#testing-platforms)
+
+## Test network measurement results
+
+The measurement results are shown below:
+
+### Risk Assessments
+
+![Average Latency](../../05-plots/sms/01-sms-risk-assess-avg-latency-v2.png)
+
+**Figure 1** - Health & Safety services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../05-plots/sms/02-sms-risk-assess-throughput-v2.png)
+
+**Figure 2** - Health & Safety services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+![Throughput Read](../../05-plots/sms/05-sms-risk-assess-read-throughput-v2.png)
+
+**Figure 3** - Health & Safety services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+
+### Accident / Incident Reports
+
+![Average Latency](../../05-plots/sms/03-sms-acc-report-avg-latency-v2.png)
+
+**Figure 4** - Health & Safety services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../05-plots/sms/04-sms-acc-report-throughput-v2.png)
+
+**Figure 5** - Health & Safety services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+[Back to top](#testing-platforms)
+

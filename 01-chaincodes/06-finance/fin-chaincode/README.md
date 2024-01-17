@@ -2271,3 +2271,56 @@ Execution:
 npx caliper launch manager --caliper-workspace ./ --caliper-networkconfig networks/fabric/test-network.yaml --caliper-benchconfig benchmarks/samples/fabric/proficiency/config.yaml --caliper-flow-only-test --caliper-fabric-gateway-enabled
 ```
 [Back to top](#testing-platforms)
+
+## Test network measurement results
+
+The measurement results are shown below:
+
+### Purchase Order
+
+![Average Latency](../../../05-plots/fin/01-fin-po-avg-latency-v2.png)
+
+**Figure 1** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../../05-plots/fin/02-fin-po-throughput-v2.png)
+
+**Figure 2** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+![Throughput Read](../../../05-plots/fin/07-fin-po-read-throughput-v2.png)
+
+**Figure 3** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+
+[Back to top](#testing-platforms)
+
+### Invoice for Operational Services
+
+![Average Latency](../../../05-plots/fin/03-fin-inv-ops-avg-latency-v2.png)
+
+**Figure 4** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../../05-plots/fin/04-fin-inv-ops-throughput-v2.png)
+
+**Figure 5** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+![Throughput Read](../../../05-plots/fin/08-fin-inv-ops-read-throughput-v2.png)
+
+**Figure 6** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+
+[Back to top](#testing-platforms)
+
+### Invoice for Additional Works
+
+![Average Latency](../../../05-plots/fin/05-fin-inv-add-work-avg-latency-v2.png)
+
+**Figure 7** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../../05-plots/fin/06-fin-inv-add-work-throughput-v2.png)
+
+**Figure 8** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+![Throughput Read](../../../05-plots/fin/09-fin-inv-add-work-read-throughput-v2.png)
+
+**Figure 9** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+
+[Back to top](#testing-platforms)
+

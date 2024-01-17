@@ -1480,3 +1480,21 @@ npx caliper launch manager --caliper-workspace ./ --caliper-networkconfig networ
 ```
 
 [Back on top](#testing-platforms)
+
+## Test network measurement results
+
+The measurement results are shown below:
+
+![Average Latency](../../../05-plots/prf/01-avg-latency-v2.png)
+
+**Figure 1** - Proficiency services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../../05-plots/prf/02-throughput-v2.png)
+
+**Figure 2** - Proficiency services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+![Throughput Read](../../../05-plots/prf/03-throughput-read-v2.png)
+
+**Figure 3** - Proficiency services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+
+[Back to top](#testing-platforms)
