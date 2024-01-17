@@ -43,45 +43,33 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 |  | Creating invoices for additional work. | 533 | 8.8 | 0.48 | 620 | 10.2148/s | 1.93 | 12 | 593.84 |
 
 <table>
-  <style>
-    td {
-      text-align: center;
-    }
-  </style>
   <tr>
-    <th rowspan="2">Chaincode</th>
-    <th rowspan="2">Chaincode Definition</th>
-    <th colspan="2">Data received</th>
-    <th colspan="2">Data sent</th>
-    <th colspan="1">Avg. Latency</th>
-    <th colspan="1">Total requests</th>
-    <th colspan="1">Requests rate</th>
-    <th colspan="2">Failed</th>
-    <th colspan="1">p(95)</th>
+    <th align="center" rowspan="2">Chaincode</th>
+    <th align="center"rowspan="2">Chaincode Definition</th>
+    <th align="center"colspan="2">Data received</th>
+    <th align="center"colspan="2">Data sent</th>
+    <th align="center"colspan="1">Avg. Latency</th>
+    <th align="center"colspan="1">Total requests</th>
+    <th align="center"colspan="1">Requests rate</th>
+    <th align="center"colspan="2">Failed</th>
+    <th align="center"colspan="1">p(95)</th>
   </tr>
   <tr>
-    <td>[kB]</td>
-    <td>[kB/s]</td>
-    <td>[kB]</td>
-    <td>[kB/s]</td>
-    <td>[s]</td>
-    <td>[#]</td>
-    <td>[TPS rate]</td>
-    <td>[%]</td>
-    <td>[#]</td>
-    <td>[ms]</td>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[s]</td>
+    <td align="center">[#]</td>
+    <td align="center">[TPS rate]</td>
+    <td align="center">[%]</td>
+    <td align="center">[#]</td>
+    <td align="center">[ms]</td>
   </tr>
   <!-- Add rows here -->
 </table>
 
-
-
 ___
-
-Here is the HTML code for the table:
-
-
-
 
 
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
