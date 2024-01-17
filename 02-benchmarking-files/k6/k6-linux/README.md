@@ -58,16 +58,16 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
   <tr>
     <td align="left">Organisational Chaincode*</td>
     <td align="left">Adding a new employee to the organisation.</td>
-    <td>666</td>
-    <td>11</td>
-    <td>405</td>
-    <td>6.7</td>
-    <td>0.80</td>
-    <td>751</td>
-    <td>12.3626/s</td>
-    <td>0.13</td>
-    <td>1</td>
-    <td>870.02</td>
+    <td align="center">666</td>
+    <td align="center">11</td>
+    <td align="center">405</td>
+    <td align="center">6.7</td>
+    <td align="center">0.80</td>
+    <td align="center">751</td>
+    <td align="center">12.3626/s</td>
+    <td align="center">0.13</td>
+    <td align="center">1</td>
+    <td align="center">870.02</td>
   </tr>
   <!-- Add rows here -->
 </table>
