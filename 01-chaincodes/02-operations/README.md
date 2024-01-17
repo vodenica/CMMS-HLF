@@ -378,3 +378,22 @@ The report will be generated in the `caliper-benchmarks` directory as `report.ht
 cd /home/vodenica/go/src/github.com/hyperledger/caliper-benchmarks
 ```
 [Back on top](#operations-services-chaincode)
+
+## Test network measurement results
+
+The measurement results are shown below:
+
+![Average Latency](../../05-plots/ops/01-avg-latency-v2.png)
+
+_**Figure 1**_ - Operational chaincode benchmarking parameters: Impact the number of transactions on average latency.
+
+![Throughput](../../05-plots/ops/02-throughput-v2.png)
+
+_**Figure 2**_ - Operational chaincode benchmarking parameters: Impact the number of transactions on throughput.
+
+![Throughput Read](../../05-plots/ops/03-throughput-read-v2.png)
+
+_**Figure 3**_ - Operational chaincode benchmarking parameters: Impact the number of transactions on throughput put for the “Read” function.
+
+[Back to top](#operations-services-chaincode)
+
