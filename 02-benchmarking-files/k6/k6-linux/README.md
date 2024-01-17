@@ -198,7 +198,7 @@ ___
 
 ### Table 3 - Multi region summary for FR region
 
-### Table 4 - Multi region  summary for OH region
+### Table 4 - Multi region summary for OH region
 
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
 
