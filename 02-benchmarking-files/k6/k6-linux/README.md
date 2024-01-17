@@ -84,14 +84,6 @@ Here is the HTML code for the table:
     <th rowspan="2">p(95)</th>
   </tr>
   <tr>
-    <td>[kB]</td>
-    <td>[kB/s]</td>
-    <td>[kB]</td>
-    <td>[kB/s]</td>
-    <td>[%]</td>
-    <td>[#]</td>
-  </tr>
-  <tr>
     <td rowspan="2">Organisational Chaincode*</td>
     <td>Adding a new employee to the organisation.</td>
     <td>666</td>
