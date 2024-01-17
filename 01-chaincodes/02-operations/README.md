@@ -381,7 +381,7 @@ cd /home/vodenica/go/src/github.com/hyperledger/caliper-benchmarks
 
 ## Test network measurement results
 
-The measurement results are shown below:
+The measurement results are shown below for the function `CreateNewDailyOperationsLog`:
 
 ![Average Latency](../../05-plots/ops/01-avg-latency-v2.png)
 
