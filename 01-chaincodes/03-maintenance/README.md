@@ -874,7 +874,42 @@ Response in `Hyperledger Caliper` for the function `ReadPreventiveWorkOrder`, ac
   "not - validated"
 ]
 ```
-
-
 [Back to top](#testing-platforms) 
+
+## Test network measurement results
+
+The measurement results are shown below:
+
+### Preventive Maintenance Work Orders
+
+![Average Latency](../../05-plots/mte/01-mte-prev-avg-latency-v2.png)
+
+**Figure 1** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../05-plots/mte/02-mte-prev-throughput-v2.png)
+
+**Figure 2** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+![Throughput Read](../../05-plots/mte/05-mte-prev-read-throughput-v2.png)
+
+**Figure 3** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+
+[Back to top](#testing-platforms)
+
+### Corrective Maintenance Work Orders
+
+![Average Latency](../../05-plots/mte/03-mte-corr-avg-latency-v2.png)
+
+**Figure 1** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on average latency.
+
+![Throughput](../../05-plots/mte/04-mte-corr-throughput-v2.png)
+
+**Figure 2** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput.
+
+![Throughput Read](../../05-plots/mte/06-mte-corr-read-throughput-v2.png)
+
+**Figure 3** - Maintenance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
+
+[Back to top](#testing-platforms)
+
 
