@@ -53,9 +53,6 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">[ms]</td>
   </tr>
   <tr>
-    <td colspan="12"></td>
-  </tr>
-  <tr>
     <td align="left">Organisational Chaincode*</td>
     <td align="left">Adding a new employee to the organisation.</td>
     <td align="center">666</td>
@@ -70,9 +67,6 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">870.02</td>
   </tr>
   <tr>
-    <td colspan="12"></td>
-  </tr>
-  <tr>
     <td align="left">Operational Chaincode*</td>
     <td align="left">Creating a new daily operations log.</td>
     <td align="center">707</td>
@@ -85,6 +79,20 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td align="center">4.60</td>
     <td align="center">37</td>
     <td align="center">847.23</td>
+  </tr>
+  <tr>
+    <td align="left">Maintenance Chaincode*</td>
+    <td align="left">Creating preventive work orders.</td>
+    <td align="center">755</td>
+    <td align="center">12</td>
+    <td align="center">1800</td>
+    <td align="center">29</td>
+    <td align="center">0.76</td>
+    <td align="center">789</td>
+    <td align="center">12.9931/s</td>
+    <td align="center">0.38</td>
+    <td align="center">3</td>
+    <td align="center">824.78</td>
   </tr>
   <!-- Add rows here -->
 </table>
