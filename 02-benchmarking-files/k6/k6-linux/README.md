@@ -24,10 +24,11 @@ As seen in one sample in the picture below, K6 generates and presents a thorough
 ![k6 results](../../../05-plots/images/01-ops.png)
 
 The `k6` load testing results are comprehensively compiled from end-of-test summary reports for each chaincode function. These reports detail aggregate statistics for the primary aspects of the test. As illustrated in the subsequent tables: 
-* A single table represents the test results for a single region [Table 1](#table-4-Multi-region-end-of-the-test-summary (_OH - region_)) and 
+* A single table represents the test results for a single region [Table 1](#table-1-single-region-summary) and 
 * Three separate tables depict the test results for three distinct regions [Table 2](#table-2), [Table 3](#table-3), and [Table 4](#table-4).
 
-### Table 1 - Single region `end-of-the-test` summary (_SE - region_)
+### Table 1 - Single region summary
+The table shows the `end-of-test` summary for the load test in a single region environment (_**SE region**_)
 <table>
   <tr>
     <th align="center" rowspan="2">Chaincode</th>
