@@ -550,7 +550,7 @@ Note:
 
 [Back on top](#end-of-test-summary)
 
-__
+___
 
 ### Table 4 - Multi region summary for OH region
 The table shows the `end-of-test` summary for the load test in a single region environment (_**SE region**_)
