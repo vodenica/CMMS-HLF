@@ -43,6 +43,10 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
 |  | Creating invoices for additional work. | 533 | 8.8 | 0.48 | 620 | 10.2148/s | 1.93 | 12 | 593.84 |
 
 <table>
+  <style>
+td {
+  text-align: center;
+}
   <tr>
     <th rowspan="2">Chaincode</th>
     <th rowspan="2">Chaincode Definition</th>
