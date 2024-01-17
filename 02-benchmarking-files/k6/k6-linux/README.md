@@ -52,7 +52,7 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <th colspan="1">Total requests</th>
     <th colspan="1">Requests rate</th>
     <th colspan="2">Failed</th>
-    <th rowspan="2">p(95)</th>
+    <th colspan="1">p(95)</th>
   </tr>
   <tr>
     <td>[kB]</td>
@@ -64,6 +64,7 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td>[TPS rate]</td>
     <td>[%]</td>
     <td>[#]</td>
+    <td>[ms]</td>
   </tr>
   <!-- Add rows here -->
 </table>
