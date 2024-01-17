@@ -191,10 +191,12 @@ The table shows the `end-of-test` summary for the load test in a single region e
   </tr>
   <!-- Add rows here -->
 </table>
+
 Note:
+
 * '*` represents ten (10) users.
-* `**` represents five (5) users.
-* `***` the 95th percentile represents a value below which 95% of the data points fall.
+*  `**` represents five (5) users.
+*  `***` the 95th percentile represents a value below which 95% of the data points fall.
 
 
 ___
