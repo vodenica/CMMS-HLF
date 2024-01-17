@@ -24,10 +24,10 @@ As seen in one sample in the picture below, K6 generates and presents a thorough
 ![k6 results](../../../05-plots/images/01-ops.png)
 
 The `k6` load testing results are comprehensively compiled from end-of-test summary reports for each chaincode function. These reports detail aggregate statistics for the primary aspects of the test. As illustrated in the subsequent tables: 
-* A single table represents the test results for a single region [Table 1](#table-1-single-region-summary) and 
+* A single table represents the test results for a single region [Table 1](#table-1---single-region-summary) and 
 * Three separate tables depict the test results for three distinct regions [Table 2](#table-2), [Table 3](#table-3), and [Table 4](#table-4).
 
-### Table 1 Single region summary
+### Table 1 - Single region summary
 The table shows the `end-of-test` summary for the load test in a single region environment (_**SE region**_)
 <table>
   <tr>
@@ -194,11 +194,11 @@ The table shows the `end-of-test` summary for the load test in a single region e
 
 ___
 
-### Table 2 - Multi-region summary (SE region)
+### Table 2 - Multi-region summary SE region
 
-### Table 3 - Multi-region summary (FR - region)
+### Table 3 - Multi-region summary FR region
 
-### Table 4 - Multi-region  summary (OH - region)
+### Table 4 - Multi-region  summary OH region
 
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
 
