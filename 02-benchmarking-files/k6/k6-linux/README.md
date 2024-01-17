@@ -71,7 +71,6 @@ ___
 
 Here is the HTML code for the table:
 
-```html
 <table>
   <tr>
     <th>Chaincode</th>
@@ -220,7 +219,6 @@ Here is the HTML code for the table:
     <td colspan="9"></td>
   </tr>
 </table>
-```
 
 
 
