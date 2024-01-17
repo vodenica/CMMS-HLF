@@ -48,9 +48,9 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <th rowspan="2">Chaincode Definition</th>
     <th colspan="2">Data received</th>
     <th colspan="2">Data sent</th>
-    <th colspan="2">Avg. Latency</th>
-    <th colspan="2">Total requests</th>
-    <th rowspan="2">Requests rate</th>
+    <th colspan="1">Avg. Latency</th>
+    <th colspan="1">Total requests</th>
+    <th colspan="1">Requests rate</th>
     <th colspan="2">Failed</th>
     <th rowspan="2">p(95)</th>
   </tr>
@@ -61,6 +61,7 @@ The `k6` load testing results are comprehensively compiled from end-of-test summ
     <td>[kB/s]</td>
     <td>[s]</td>
     <td>[#]</td>
+    <td>[TPS rate]</td>
     <td>[%]</td>
     <td>[#]</td>
   </tr>
