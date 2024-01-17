@@ -197,15 +197,523 @@ Note:
 * `*` represents ten (10) users.
 *  `**` represents five (5) users.
 *  `***` the 95th percentile represents a value below which 95% of the data points fall.
-
-
 ___
 
 ### Table 2 - Multi region summary for SE region
+The table shows the `end-of-test` summary for the load test in a single region environment (_**SE region**_)
+<table>
+  <tr>
+    <th align="center" rowspan="2">Chaincode</th>
+    <th align="center" rowspan="2">Chaincode Function</th>
+    <th align="center" colspan="2">Data received</th>
+    <th align="center" colspan="2">Data sent</th>
+    <th align="center" colspan="1">Avg. Latency</th>
+    <th align="center" colspan="1">Total requests</th>
+    <th align="center" colspan="1">Requests rate</th>
+    <th align="center" colspan="2">Failed</th>
+    <th align="center" colspan="1">p(95)***</th>
+  </tr>
+  <tr>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[s]</td>
+    <td align="center">[#]</td>
+    <td align="center">[TPS rate]</td>
+    <td align="center">[%]</td>
+    <td align="center">[#]</td>
+    <td align="center">[ms]</td>
+  </tr>
+  <tr>
+    <td align="left">Organisational Chaincode*</td>
+    <td align="left">Adding a new employee to the organisation.</td>
+    <td align="center">666</td>
+    <td align="center">11</td>
+    <td align="center">405</td>
+    <td align="center">6.7</td>
+    <td align="center">0.80</td>
+    <td align="center">751</td>
+    <td align="center">12.3626/s</td>
+    <td align="center">0.13</td>
+    <td align="center">1</td>
+    <td align="center">870.02</td>
+  </tr>
+  <tr>
+    <td align="left">Operational Chaincode*</td>
+    <td align="left">Creating a new daily operations log.</td>
+    <td align="center">707</td>
+    <td align="center">12</td>
+    <td align="center">1000</td>
+    <td align="center">17</td>
+    <td align="center">0.75</td>
+    <td align="center">804</td>
+    <td align="center">13.2384/s</td>
+    <td align="center">4.60</td>
+    <td align="center">37</td>
+    <td align="center">847.23</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="2">Maintenance Chaincode*</td>
+    <td align="left">Creating preventive work orders.</td>
+    <td align="center">755</td>
+    <td align="center">12</td>
+    <td align="center">1800</td>
+    <td align="center">29</td>
+    <td align="center">0.76</td>
+    <td align="center">789</td>
+    <td align="center">12.9931/s</td>
+    <td align="center">0.38</td>
+    <td align="center">3</td>
+    <td align="center">824.78</td>
+  </tr>
+  <tr>
+    <td align="left">Creating corrective work orders.</td>
+    <td align="center">649</td>
+    <td align="center">11</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.83</td>
+    <td align="center">721</td>
+    <td align="center">11.8730/s</td>
+    <td align="center">1.38</td>
+    <td align="center">10</td>
+    <td align="center">971.13</td>
+  </tr>
+  <tr>
+    <td align="left">Proficiency Chaincode*</td>
+    <td align="left">Creating training Module One.</td>
+    <td align="center">725</td>
+    <td align="center">12</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.73</td>
+    <td align="center">822</td>
+    <td align="center">13.5449/s</td>
+    <td align="center">0.12</td>
+    <td align="center">1</td>
+    <td align="center">817.56</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="2">Health & Safety Chaincode**</td>
+    <td align="left">Creating incident and accident reports.</td>
+    <td align="center">616</td>
+    <td align="center">10</td>
+    <td align="center">690</td>
+    <td align="center">11</td>
+    <td align="center">0.42</td>
+    <td align="center">714</td>
+    <td align="center">11.8308/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">484.55</td>
+  </tr>
+  <tr>
+    <td align="left">Creating risk assessments.</td>
+    <td align="center">539</td>
+    <td align="center">8.9</td>
+    <td align="center">158</td>
+    <td align="center">2.6</td>
+    <td align="center">0.48</td>
+    <td align="center">621</td>
+    <td align="center">10.2629/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">596.36</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="3">Financial Chaincode**</td>
+    <td align="left">Creating purchase order.</td>
+    <td align="center">577</td>
+    <td align="center">9.5</td>
+    <td align="center">748</td>
+    <td align="center">12</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0534/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">589.29</td>
+  </tr>
+  <tr>
+    <td align="left">Creating operational invoices.</td>
+    <td align="center">524</td>
+    <td align="center">8.7</td>
+    <td align="center">205</td>
+    <td align="center">3.4</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0631/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">576.20</td>
+  </tr>
+  <tr>
+    <td align="left">Creating invoices for additional work.</td>
+    <td align="center">533</td>
+    <td align="center">8.8</td>
+    <td align="center">548</td>
+    <td align="center">9</td>
+    <td align="center">0.48</td>
+    <td align="center">620</td>
+    <td align="center">10.2148</td>
+    <td align="center">1.93</td>
+    <td align="center">12</td>
+    <td align="center">593.84</td>
+  </tr>
+  <!-- Add rows here -->
+</table>
+
+Note:
+
+* `*` represents ten (10) users.
+*  `**` represents five (5) users.
+*  `***` the 95th percentile represents a value below which 95% of the data points fall.
+___
 
 ### Table 3 - Multi region summary for FR region
+The table shows the `end-of-test` summary for the load test in a single region environment (_**SE region**_)
+<table>
+  <tr>
+    <th align="center" rowspan="2">Chaincode</th>
+    <th align="center" rowspan="2">Chaincode Function</th>
+    <th align="center" colspan="2">Data received</th>
+    <th align="center" colspan="2">Data sent</th>
+    <th align="center" colspan="1">Avg. Latency</th>
+    <th align="center" colspan="1">Total requests</th>
+    <th align="center" colspan="1">Requests rate</th>
+    <th align="center" colspan="2">Failed</th>
+    <th align="center" colspan="1">p(95)***</th>
+  </tr>
+  <tr>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[s]</td>
+    <td align="center">[#]</td>
+    <td align="center">[TPS rate]</td>
+    <td align="center">[%]</td>
+    <td align="center">[#]</td>
+    <td align="center">[ms]</td>
+  </tr>
+  <tr>
+    <td align="left">Organisational Chaincode*</td>
+    <td align="left">Adding a new employee to the organisation.</td>
+    <td align="center">666</td>
+    <td align="center">11</td>
+    <td align="center">405</td>
+    <td align="center">6.7</td>
+    <td align="center">0.80</td>
+    <td align="center">751</td>
+    <td align="center">12.3626/s</td>
+    <td align="center">0.13</td>
+    <td align="center">1</td>
+    <td align="center">870.02</td>
+  </tr>
+  <tr>
+    <td align="left">Operational Chaincode*</td>
+    <td align="left">Creating a new daily operations log.</td>
+    <td align="center">707</td>
+    <td align="center">12</td>
+    <td align="center">1000</td>
+    <td align="center">17</td>
+    <td align="center">0.75</td>
+    <td align="center">804</td>
+    <td align="center">13.2384/s</td>
+    <td align="center">4.60</td>
+    <td align="center">37</td>
+    <td align="center">847.23</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="2">Maintenance Chaincode*</td>
+    <td align="left">Creating preventive work orders.</td>
+    <td align="center">755</td>
+    <td align="center">12</td>
+    <td align="center">1800</td>
+    <td align="center">29</td>
+    <td align="center">0.76</td>
+    <td align="center">789</td>
+    <td align="center">12.9931/s</td>
+    <td align="center">0.38</td>
+    <td align="center">3</td>
+    <td align="center">824.78</td>
+  </tr>
+  <tr>
+    <td align="left">Creating corrective work orders.</td>
+    <td align="center">649</td>
+    <td align="center">11</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.83</td>
+    <td align="center">721</td>
+    <td align="center">11.8730/s</td>
+    <td align="center">1.38</td>
+    <td align="center">10</td>
+    <td align="center">971.13</td>
+  </tr>
+  <tr>
+    <td align="left">Proficiency Chaincode*</td>
+    <td align="left">Creating training Module One.</td>
+    <td align="center">725</td>
+    <td align="center">12</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.73</td>
+    <td align="center">822</td>
+    <td align="center">13.5449/s</td>
+    <td align="center">0.12</td>
+    <td align="center">1</td>
+    <td align="center">817.56</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="2">Health & Safety Chaincode**</td>
+    <td align="left">Creating incident and accident reports.</td>
+    <td align="center">616</td>
+    <td align="center">10</td>
+    <td align="center">690</td>
+    <td align="center">11</td>
+    <td align="center">0.42</td>
+    <td align="center">714</td>
+    <td align="center">11.8308/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">484.55</td>
+  </tr>
+  <tr>
+    <td align="left">Creating risk assessments.</td>
+    <td align="center">539</td>
+    <td align="center">8.9</td>
+    <td align="center">158</td>
+    <td align="center">2.6</td>
+    <td align="center">0.48</td>
+    <td align="center">621</td>
+    <td align="center">10.2629/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">596.36</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="3">Financial Chaincode**</td>
+    <td align="left">Creating purchase order.</td>
+    <td align="center">577</td>
+    <td align="center">9.5</td>
+    <td align="center">748</td>
+    <td align="center">12</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0534/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">589.29</td>
+  </tr>
+  <tr>
+    <td align="left">Creating operational invoices.</td>
+    <td align="center">524</td>
+    <td align="center">8.7</td>
+    <td align="center">205</td>
+    <td align="center">3.4</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0631/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">576.20</td>
+  </tr>
+  <tr>
+    <td align="left">Creating invoices for additional work.</td>
+    <td align="center">533</td>
+    <td align="center">8.8</td>
+    <td align="center">548</td>
+    <td align="center">9</td>
+    <td align="center">0.48</td>
+    <td align="center">620</td>
+    <td align="center">10.2148</td>
+    <td align="center">1.93</td>
+    <td align="center">12</td>
+    <td align="center">593.84</td>
+  </tr>
+  <!-- Add rows here -->
+</table>
+
+Note:
+
+* `*` represents ten (10) users.
+*  `**` represents five (5) users.
+*  `***` the 95th percentile represents a value below which 95% of the data points fall.
+___
 
 ### Table 4 - Multi region summary for OH region
+The table shows the `end-of-test` summary for the load test in a single region environment (_**SE region**_)
+<table>
+  <tr>
+    <th align="center" rowspan="2">Chaincode</th>
+    <th align="center" rowspan="2">Chaincode Function</th>
+    <th align="center" colspan="2">Data received</th>
+    <th align="center" colspan="2">Data sent</th>
+    <th align="center" colspan="1">Avg. Latency</th>
+    <th align="center" colspan="1">Total requests</th>
+    <th align="center" colspan="1">Requests rate</th>
+    <th align="center" colspan="2">Failed</th>
+    <th align="center" colspan="1">p(95)***</th>
+  </tr>
+  <tr>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[kB]</td>
+    <td align="center">[kB/s]</td>
+    <td align="center">[s]</td>
+    <td align="center">[#]</td>
+    <td align="center">[TPS rate]</td>
+    <td align="center">[%]</td>
+    <td align="center">[#]</td>
+    <td align="center">[ms]</td>
+  </tr>
+  <tr>
+    <td align="left">Organisational Chaincode*</td>
+    <td align="left">Adding a new employee to the organisation.</td>
+    <td align="center">666</td>
+    <td align="center">11</td>
+    <td align="center">405</td>
+    <td align="center">6.7</td>
+    <td align="center">0.80</td>
+    <td align="center">751</td>
+    <td align="center">12.3626/s</td>
+    <td align="center">0.13</td>
+    <td align="center">1</td>
+    <td align="center">870.02</td>
+  </tr>
+  <tr>
+    <td align="left">Operational Chaincode*</td>
+    <td align="left">Creating a new daily operations log.</td>
+    <td align="center">707</td>
+    <td align="center">12</td>
+    <td align="center">1000</td>
+    <td align="center">17</td>
+    <td align="center">0.75</td>
+    <td align="center">804</td>
+    <td align="center">13.2384/s</td>
+    <td align="center">4.60</td>
+    <td align="center">37</td>
+    <td align="center">847.23</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="2">Maintenance Chaincode*</td>
+    <td align="left">Creating preventive work orders.</td>
+    <td align="center">755</td>
+    <td align="center">12</td>
+    <td align="center">1800</td>
+    <td align="center">29</td>
+    <td align="center">0.76</td>
+    <td align="center">789</td>
+    <td align="center">12.9931/s</td>
+    <td align="center">0.38</td>
+    <td align="center">3</td>
+    <td align="center">824.78</td>
+  </tr>
+  <tr>
+    <td align="left">Creating corrective work orders.</td>
+    <td align="center">649</td>
+    <td align="center">11</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.83</td>
+    <td align="center">721</td>
+    <td align="center">11.8730/s</td>
+    <td align="center">1.38</td>
+    <td align="center">10</td>
+    <td align="center">971.13</td>
+  </tr>
+  <tr>
+    <td align="left">Proficiency Chaincode*</td>
+    <td align="left">Creating training Module One.</td>
+    <td align="center">725</td>
+    <td align="center">12</td>
+    <td align="center">1100</td>
+    <td align="center">18</td>
+    <td align="center">0.73</td>
+    <td align="center">822</td>
+    <td align="center">13.5449/s</td>
+    <td align="center">0.12</td>
+    <td align="center">1</td>
+    <td align="center">817.56</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="2">Health & Safety Chaincode**</td>
+    <td align="left">Creating incident and accident reports.</td>
+    <td align="center">616</td>
+    <td align="center">10</td>
+    <td align="center">690</td>
+    <td align="center">11</td>
+    <td align="center">0.42</td>
+    <td align="center">714</td>
+    <td align="center">11.8308/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">484.55</td>
+  </tr>
+  <tr>
+    <td align="left">Creating risk assessments.</td>
+    <td align="center">539</td>
+    <td align="center">8.9</td>
+    <td align="center">158</td>
+    <td align="center">2.6</td>
+    <td align="center">0.48</td>
+    <td align="center">621</td>
+    <td align="center">10.2629/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">596.36</td>
+  </tr>
+  <tr>
+    <td align="left" rowspan="3">Financial Chaincode**</td>
+    <td align="left">Creating purchase order.</td>
+    <td align="center">577</td>
+    <td align="center">9.5</td>
+    <td align="center">748</td>
+    <td align="center">12</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0534/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">589.29</td>
+  </tr>
+  <tr>
+    <td align="left">Creating operational invoices.</td>
+    <td align="center">524</td>
+    <td align="center">8.7</td>
+    <td align="center">205</td>
+    <td align="center">3.4</td>
+    <td align="center">0.49</td>
+    <td align="center">608</td>
+    <td align="center">10.0631/s</td>
+    <td align="center">1.15</td>
+    <td align="center">7</td>
+    <td align="center">576.20</td>
+  </tr>
+  <tr>
+    <td align="left">Creating invoices for additional work.</td>
+    <td align="center">533</td>
+    <td align="center">8.8</td>
+    <td align="center">548</td>
+    <td align="center">9</td>
+    <td align="center">0.48</td>
+    <td align="center">620</td>
+    <td align="center">10.2148</td>
+    <td align="center">1.93</td>
+    <td align="center">12</td>
+    <td align="center">593.84</td>
+  </tr>
+  <!-- Add rows here -->
+</table>
+
+Note:
+
+* `*` represents ten (10) users.
+*  `**` represents five (5) users.
+*  `***` the 95th percentile represents a value below which 95% of the data points fall.
+___
 
 What is REST API? [Read more](https://www.redhat.com/en/topics/api/what-is-a-rest-api).
 
