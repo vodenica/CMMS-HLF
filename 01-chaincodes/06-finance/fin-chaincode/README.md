@@ -16,6 +16,7 @@ The chaincode for the Financial services of an enterprise can be accessed [here]
 
 ## Testing platforms
 * Hyperledger Fabric `test-network` with `Caliper` benchmarking testing framework ([`Caliper Testing`](#caliper-testing) & [`Test Network`](#test-network)).
+* The benchmarking parameters and measuring results can be observed [here](#test-network-measurement-results).
 * Hyperledger Fabric on the `Kaleido` Web3 BaaS platform, [`Kaleido Testing`](#kaleido-testing).
 * REST API testing with the [`k6`](../../../02-benchmarking-files/k6/k6-linux/README.md) load testing framework.
 
@@ -2323,4 +2324,6 @@ The measurement results are shown below:
 **Figure 9** - Finance services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
 
 [Back to top](#testing-platforms)
+
+#### End of the file.
 
