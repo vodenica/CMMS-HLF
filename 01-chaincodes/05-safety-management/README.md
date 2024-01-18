@@ -17,9 +17,9 @@ In this Health and Safety module, some of the key records that an organization m
 
 1. **Risk Assessments:** These records help to identify and evaluate potential hazards in the workplace, prioritize them, and implement measures to control them.
 
-2. **Incident and Accident Reports:** These records are important to track the number and types of accidents, near-misses, and incidents that occur in the workplace, and to identify trends and patterns that can help to prevent future incidents.
+2. **Incident and Accident Reports:** These records are important to track the number and types of accidents, near-misses, and incidents that occur in the workplace and to identify trends and patterns that can help to prevent future incidents.
 
-3. **Training Records:** These records help to ensure that all employees have received the necessary training to perform their job safely and to comply with health and safety regulations.
+3. **Training Records:** These records help to ensure that all employees have received the necessary training to perform their jobs safely and to comply with health and safety regulations.
 
 4. **Safety Inspections and Audits:** These records provide evidence that regular safety inspections and audits have been carried out to identify hazards and ensure compliance with health and safety regulations.
 
@@ -33,6 +33,7 @@ It is important to note that the specific records required may vary depending on
 
 ## Testing platforms
 * Hyperledger Fabric `test-network` with `Caliper` benchmarking testing framework ([`Caliper Testing`](#caliper-testing) & [`Test Network`](#test-network)).
+* The benchmarking parameters and measuring results can be observed [here](#test-network-measurement-results).
 * Hyperledger Fabric on the `Kaleido` Web3 BaaS platform, [`Kaleido Testing`](#kaleido-testing).
 * REST API testing with the [`k6`](../../02-benchmarking-files/k6/k6-linux/README.md) load testing framework.
 
