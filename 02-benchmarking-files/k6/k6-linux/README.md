@@ -19,9 +19,11 @@ or
 ```bash
 k6 run --vus 10 --duration 60s [file_name].js
 ```
-As seen in one sample in the picture below, K6 generates and presents a thorough summary of the aggregated results at the end of a test.
+As seen in one sample in the picture below, K6 generates and presents a thorough summary of the aggregated results at the end of a test. As seen below in Figure 1.
 
 ![k6 results](../../../05-plots/images/01-ops.png)
+
+**Figure 1** - End-of-test summary
 
 ## End of test summary
 The `k6` load testing results are comprehensively compiled from end-of-test summary reports for each chaincode function. These reports detail aggregate statistics for the primary aspects of the test. As illustrated in the subsequent tables: 
