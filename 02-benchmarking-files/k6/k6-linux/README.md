@@ -229,62 +229,62 @@ The table shows the `end-of-test` summary for the load test in a single region e
     <td align="center">[ms]</td>
   </tr>
   <tr>
-    <td align="left">Organisational Chaincode*</td>
+    <td align="left">Organisational Chaincode**</td>
     <td align="left">Adding a new employee to the organisation.</td>
-    <td align="center">666</td>
-    <td align="center">11</td>
-    <td align="center">405</td>
-    <td align="center">6.7</td>
-    <td align="center">0.80</td>
-    <td align="center">751</td>
-    <td align="center">12.3626/s</td>
-    <td align="center">0.13</td>
-    <td align="center">1</td>
-    <td align="center">870.02</td>
+    <td align="center">321</td>
+    <td align="center">3.5</td>
+    <td align="center">198</td>
+    <td align="center">2.1</td>
+    <td align="center">1.26</td>
+    <td align="center">359</td>
+    <td align="center">13.8782/s</td>
+    <td align="center">1.39</td>
+    <td align="center">5</td>
+    <td align="center">2.47</td>
   </tr>
   <tr>
-    <td align="left">Operational Chaincode*</td>
+    <td align="left">Operational Chaincode**</td>
     <td align="left">Creating a new daily operations log.</td>
-    <td align="center">707</td>
-    <td align="center">12</td>
-    <td align="center">1000</td>
-    <td align="center">17</td>
-    <td align="center">0.75</td>
-    <td align="center">804</td>
-    <td align="center">13.2384/s</td>
-    <td align="center">4.60</td>
-    <td align="center">37</td>
-    <td align="center">847.23</td>
+    <td align="center">412</td>
+    <td align="center">4.5</td>
+    <td align="center">600</td>
+    <td align="center">6.6</td>
+    <td align="center">0.96</td>
+    <td align="center">469</td>
+    <td align="center">5.1570/s</td>
+    <td align="center">0.32</td>
+    <td align="center">2</td>
+    <td align="center">1.71</td>
   </tr>
   <tr>
-    <td align="left" rowspan="2">Maintenance Chaincode*</td>
+    <td align="left" rowspan="2">Maintenance Chaincode**</td>
     <td align="left">Creating preventive work orders.</td>
-    <td align="center">755</td>
-    <td align="center">12</td>
-    <td align="center">1800</td>
-    <td align="center">29</td>
-    <td align="center">0.76</td>
-    <td align="center">789</td>
-    <td align="center">12.9931/s</td>
-    <td align="center">0.38</td>
-    <td align="center">3</td>
-    <td align="center">824.78</td>
+    <td align="center">535</td>
+    <td align="center">5.9</td>
+    <td align="center">1400</td>
+    <td align="center">15</td>
+    <td align="center">0.73</td>
+    <td align="center">617</td>
+    <td align="center">6.8111/s</td>
+    <td align="center">0.32</td>
+    <td align="center">2</td>
+    <td align="center">1.00</td>
   </tr>
   <tr>
     <td align="left">Creating corrective work orders.</td>
-    <td align="center">649</td>
-    <td align="center">11</td>
-    <td align="center">1100</td>
-    <td align="center">18</td>
-    <td align="center">0.83</td>
-    <td align="center">721</td>
-    <td align="center">11.8730/s</td>
-    <td align="center">1.38</td>
-    <td align="center">10</td>
-    <td align="center">971.13</td>
+    <td align="center">437</td>
+    <td align="center">4.8</td>
+    <td align="center">743</td>
+    <td align="center">8.2</td>
+    <td align="center">0.90</td>
+    <td align="center">500</td>
+    <td align="center">5.5019/s</td>
+    <td align="center">0.8</td>
+    <td align="center">4</td>
+    <td align="center">1.14</td>
   </tr>
   <tr>
-    <td align="left">Proficiency Chaincode*</td>
+    <td align="left">Proficiency Chaincode**</td>
     <td align="left">Creating training Module One.</td>
     <td align="center">725</td>
     <td align="center">12</td>
