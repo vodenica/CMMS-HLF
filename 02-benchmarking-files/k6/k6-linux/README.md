@@ -366,7 +366,6 @@ The table shows the `end-of-test` summary for the load test in a single region e
     <td align="center">0</td>
     <td align="center">1.22</td>
   </tr>
-  <!-- Add rows here -->
 </table>
 
 Note:
@@ -463,85 +462,84 @@ The table shows the `end-of-test` summary for the load test in a single region e
   <tr>
     <td align="left">Proficiency Chaincode**</td>
     <td align="left">Creating training Module One.</td>
-    <td align="center">725</td>
-    <td align="center">12</td>
-    <td align="center">1100</td>
-    <td align="center">18</td>
-    <td align="center">0.73</td>
-    <td align="center">822</td>
-    <td align="center">13.5449/s</td>
-    <td align="center">0.12</td>
-    <td align="center">1</td>
-    <td align="center">817.56</td>
+    <td align="center">193</td>
+    <td align="center">2.1</td>
+    <td align="center">231</td>
+    <td align="center">2.5</td>
+    <td align="center">2.63</td>
+    <td align="center">169</td>
+    <td align="center">1.8591/s</td>
+    <td align="center">1.18</td>
+    <td align="center">2</td>
+    <td align="center">6.17</td>
   </tr>
   <tr>
     <td align="left" rowspan="2">Health & Safety Chaincode**</td>
     <td align="left">Creating incident and accident reports.</td>
-    <td align="center">616</td>
-    <td align="center">10</td>
-    <td align="center">690</td>
-    <td align="center">11</td>
-    <td align="center">0.42</td>
-    <td align="center">714</td>
-    <td align="center">11.8308/s</td>
+    <td align="center">245</td>
+    <td align="center">2.7</td>
+    <td align="center">261</td>
+    <td align="center">2.9</td>
+    <td align="center">1.62</td>
+    <td align="center">267</td>
+    <td align="center">2.9296/s</td>
     <td align="center">0.00</td>
     <td align="center">0</td>
-    <td align="center">484.55</td>
+    <td align="center">1.96</td>
   </tr>
   <tr>
     <td align="left">Creating risk assessments.</td>
-    <td align="center">539</td>
-    <td align="center">8.9</td>
-    <td align="center">158</td>
-    <td align="center">2.6</td>
-    <td align="center">0.48</td>
-    <td align="center">621</td>
-    <td align="center">10.2629/s</td>
+    <td align="center">367</td>
+    <td align="center">4.0</td>
+    <td align="center">89</td>
+    <td align="center">1.0</td>
+    <td align="center">1.52</td>
+    <td align="center">285</td>
+    <td align="center">3.0708/s</td>
     <td align="center">0.00</td>
     <td align="center">0</td>
-    <td align="center">596.36</td>
+    <td align="center">2.30</td>
   </tr>
   <tr>
     <td align="left" rowspan="3">Financial Chaincode**</td>
     <td align="left">Creating purchase order.</td>
-    <td align="center">577</td>
-    <td align="center">9.5</td>
-    <td align="center">748</td>
-    <td align="center">12</td>
-    <td align="center">0.49</td>
-    <td align="center">608</td>
-    <td align="center">10.0534/s</td>
-    <td align="center">1.15</td>
-    <td align="center">7</td>
-    <td align="center">589.29</td>
+    <td align="center">321</td>
+    <td align="center">3.5</td>
+    <td align="center">334</td>
+    <td align="center">3.6</td>
+    <td align="center">1.63</td>
+    <td align="center">270</td>
+    <td align="center">2.9518/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">2.11</td>
   </tr>
   <tr>
     <td align="left">Creating operational invoices.</td>
-    <td align="center">524</td>
-    <td align="center">8.7</td>
-    <td align="center">205</td>
-    <td align="center">3.4</td>
-    <td align="center">0.49</td>
-    <td align="center">608</td>
-    <td align="center">10.0631/s</td>
-    <td align="center">1.15</td>
-    <td align="center">7</td>
-    <td align="center">576.20</td>
+    <td align="center">233</td>
+    <td align="center">2.5</td>
+    <td align="center">68</td>
+    <td align="center">0.7</td>
+    <td align="center">2.44</td>
+    <td align="center">181</td>
+    <td align="center">1.9526/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">4.63</td>
   </tr>
   <tr>
     <td align="left">Creating invoices for additional work.</td>
-    <td align="center">533</td>
-    <td align="center">8.8</td>
-    <td align="center">548</td>
-    <td align="center">9</td>
-    <td align="center">0.48</td>
-    <td align="center">620</td>
-    <td align="center">10.2148</td>
-    <td align="center">1.93</td>
-    <td align="center">12</td>
-    <td align="center">593.84</td>
+    <td align="center">180</td>
+    <td align="center">2.0</td>
+    <td align="center">162</td>
+    <td align="center">1.8</td>
+    <td align="center">2.38</td>
+    <td align="center">188</td>
+    <td align="center">2.0671</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">5.84</td>
   </tr>
-  <!-- Add rows here -->
 </table>
 
 Note:
