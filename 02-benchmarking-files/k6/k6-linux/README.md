@@ -677,39 +677,39 @@ The table shows the `end-of-test` summary for the load test performed in a multi
   <tr>
     <td align="left" rowspan="3">Financial Chaincode**</td>
     <td align="left">Creating purchase order.</td>
-    <td align="center">577</td>
-    <td align="center">9.5</td>
-    <td align="center">748</td>
-    <td align="center">12</td>
-    <td align="center">0.49</td>
-    <td align="center">608</td>
-    <td align="center">10.0534/s</td>
+    <td align="center">259</td>
+    <td align="center">2.8</td>
+    <td align="center">339</td>
+    <td align="center">3.7</td>
+    <td align="center">1.58</td>
+    <td align="center">283</td>
+    <td align="center">3.1004/s</td>
     <td align="center">0.00</td>
     <td align="center">0</td>
     <td align="center">1.96</td>
   </tr>
   <tr>
     <td align="left">Creating operational invoices.</td>
-    <td align="center">524</td>
-    <td align="center">8.7</td>
-    <td align="center">205</td>
-    <td align="center">3.4</td>
-    <td align="center">0.49</td>
-    <td align="center">608</td>
-    <td align="center">10.0631/s</td>
+    <td align="center">390</td>
+    <td align="center">4.3</td>
+    <td align="center">141</td>
+    <td align="center">1.5</td>
+    <td align="center">1.01</td>
+    <td align="center">441</td>
+    <td align="center">4.8392/s</td>
     <td align="center">0.00</td>
     <td align="center">0</td>
     <td align="center">2.10</td>
   </tr>
   <tr>
     <td align="left">Creating invoices for additional work.</td>
-    <td align="center">533</td>
-    <td align="center">8.8</td>
-    <td align="center">548</td>
-    <td align="center">9</td>
-    <td align="center">0.48</td>
-    <td align="center">620</td>
-    <td align="center">10.2148</td>
+    <td align="center">387</td>
+    <td align="center">4.2</td>
+    <td align="center">288</td>
+    <td align="center">3.1</td>
+    <td align="center">1.38</td>
+    <td align="center">321</td>
+    <td align="center">3.5052/s</td>
     <td align="center">0.00</td>
     <td align="center">0</td>
     <td align="center">2.39</td>
