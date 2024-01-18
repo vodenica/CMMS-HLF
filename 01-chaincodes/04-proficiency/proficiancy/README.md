@@ -1499,3 +1499,5 @@ The measurement results are shown below:
 **Figure 3** - Proficiency services chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
 
 [Back to top](#testing-platforms)
+
+#### End of the page.
