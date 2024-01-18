@@ -636,43 +636,43 @@ The table shows the `end-of-test` summary for the load test performed in a multi
   <tr>
     <td align="left">Proficiency Chaincode**</td>
     <td align="left">Creating training Module One.</td>
-    <td align="center">725</td>
-    <td align="center">12</td>
-    <td align="center">1100</td>
-    <td align="center">18</td>
-    <td align="center">0.73</td>
-    <td align="center">822</td>
-    <td align="center">13.5449/s</td>
-    <td align="center">0.12</td>
-    <td align="center">1</td>
-    <td align="center">817.56</td>
+    <td align="center">397</td>
+    <td align="center">4.4</td>
+    <td align="center">600</td>
+    <td align="center">6.6</td>
+    <td align="center">0.99</td>
+    <td align="center">451</td>
+    <td align="center">4.9691/s</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">1.25</td>
   </tr>
   <tr>
     <td align="left" rowspan="2">Health & Safety Chaincode**</td>
     <td align="left">Creating incident and accident reports.</td>
-    <td align="center">616</td>
-    <td align="center">10</td>
-    <td align="center">690</td>
-    <td align="center">11</td>
-    <td align="center">0.42</td>
-    <td align="center">714</td>
-    <td align="center">11.8308/s</td>
+    <td align="center">482</td>
+    <td align="center">5.3</td>
+    <td align="center">537</td>
+    <td align="center">5.9</td>
+    <td align="center">0.81</td>
+    <td align="center">553</td>
+    <td align="center">6.1057/s</td>
     <td align="center">0.00</td>
     <td align="center">0</td>
-    <td align="center">484.55</td>
+    <td align="center">1.00</td>
   </tr>
   <tr>
     <td align="left">Creating risk assessments.</td>
-    <td align="center">539</td>
-    <td align="center">8.9</td>
-    <td align="center">158</td>
-    <td align="center">2.6</td>
-    <td align="center">0.48</td>
-    <td align="center">621</td>
-    <td align="center">10.2629/s</td>
+    <td align="center">320</td>
+    <td align="center">3.5</td>
+    <td align="center">93</td>
+    <td align="center">1.0</td>
+    <td align="center">1.25</td>
+    <td align="center">357</td>
+    <td align="center">3.9287/s</td>
     <td align="center">0.00</td>
     <td align="center">0</td>
-    <td align="center">596.36</td>
+    <td align="center">1.72</td>
   </tr>
   <tr>
     <td align="left" rowspan="3">Financial Chaincode**</td>
@@ -684,9 +684,9 @@ The table shows the `end-of-test` summary for the load test performed in a multi
     <td align="center">0.49</td>
     <td align="center">608</td>
     <td align="center">10.0534/s</td>
-    <td align="center">1.15</td>
-    <td align="center">7</td>
-    <td align="center">589.29</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">1.96</td>
   </tr>
   <tr>
     <td align="left">Creating operational invoices.</td>
@@ -697,9 +697,9 @@ The table shows the `end-of-test` summary for the load test performed in a multi
     <td align="center">0.49</td>
     <td align="center">608</td>
     <td align="center">10.0631/s</td>
-    <td align="center">1.15</td>
-    <td align="center">7</td>
-    <td align="center">576.20</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">2.10</td>
   </tr>
   <tr>
     <td align="left">Creating invoices for additional work.</td>
@@ -710,9 +710,9 @@ The table shows the `end-of-test` summary for the load test performed in a multi
     <td align="center">0.48</td>
     <td align="center">620</td>
     <td align="center">10.2148</td>
-    <td align="center">1.93</td>
-    <td align="center">12</td>
-    <td align="center">593.84</td>
+    <td align="center">0.00</td>
+    <td align="center">0</td>
+    <td align="center">2.39</td>
   </tr>
   <!-- Add rows here -->
 </table>
