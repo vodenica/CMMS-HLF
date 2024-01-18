@@ -17,7 +17,7 @@ This study pioneers the development of a Computerized Maintenance Management Sys
 
 We can illustrate an enterprise's business processes in the operational service of an urban cable car, as shown in the UML diagram below (Figure 1).
 
-**Figure 1** - The UML diagram shows how team members interact with the CMMS and its chaincodes.
+**Figure 1** - The UML diagram shows how team members interact with the CMMS and its chaincodes in five (5) steps.
 
 ![Overall Business Processes as UML Diagram](05-plots/images/fig03-UML-diagram-v2.png "Overall Business Processes as UML Diagram")
 
