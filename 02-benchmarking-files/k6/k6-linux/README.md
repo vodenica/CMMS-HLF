@@ -19,7 +19,7 @@ or
 ```bash
 k6 run --vus 10 --duration 60s [file_name].js
 ```
-As seen in one sample in the picture below, K6 generates and presents a thorough summary of the aggregated results at the end of a test. As seen below in Figure 1.
+As seen in one sample in the figure below, K6 generates and presents a thorough summary of the aggregated results at the end of a test. As seen below in Figure 1.
 
 ![k6 results](../../../05-plots/images/01-ops.png)
 
