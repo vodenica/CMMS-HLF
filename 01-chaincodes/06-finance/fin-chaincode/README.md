@@ -3,7 +3,7 @@
 # Financial Services Chaincode
 
 In this repository, we described and set up Financial services or purchase and Invoice approval processes. Also, a procedural guide for the requisition, ordering, receiving and payment of materials and services.
-Creating smart contract(s) for the financial services of a company shall support the management in doing and making the following:
+Creating chaincodes for the financial services of a company shall support the management in doing and making the following:
 
 - The setting of the company’s broad financial strategy.
 - Budget and Cost Controlling.
