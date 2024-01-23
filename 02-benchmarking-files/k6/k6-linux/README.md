@@ -57,8 +57,8 @@ The table shows the `end-of-test` summary for the load test in a single region e
     <td align="center">[ms]</td>
   </tr>
   <tr>
-    <td align="left">Organisational Chaincode*</td>
-    <td align="left">Adding a new employee to the organisation.</td>
+    <td align="left">Organizational Chaincode*</td>
+    <td align="left">Adding a new employee to the organization.</td>
     <td align="center">666</td>
     <td align="center">11</td>
     <td align="center">405</td>
@@ -231,8 +231,8 @@ The table shows the `end-of-test` summary for the load test performed in a multi
     <td align="center">[ms]</td>
   </tr>
   <tr>
-    <td align="left">Organisational Chaincode**</td>
-    <td align="left">Adding a new employee to the organisation.</td>
+    <td align="left">Organizational Chaincode**</td>
+    <td align="left">Adding a new employee to the organization.</td>
     <td align="center">321</td>
     <td align="center">3.5</td>
     <td align="center">198</td>
@@ -406,7 +406,7 @@ The table shows the `end-of-test` summary for the load test performed in a multi
   </tr>
   <tr>
     <td align="left">Organisational Chaincode**</td>
-    <td align="left">Adding a new employee to the organisation.</td>
+    <td align="left">Adding a new employee to the organization.</td>
     <td align="center">285</td>
     <td align="center">3.1</td>
     <td align="center">175</td>
@@ -579,8 +579,8 @@ The table shows the `end-of-test` summary for the load test performed in a multi
     <td align="center">[ms]</td>
   </tr>
   <tr>
-    <td align="left">Organisational Chaincode**</td>
-    <td align="left">Adding a new employee to the organisation.</td>
+    <td align="left">Organizational Chaincode**</td>
+    <td align="left">Adding a new employee to the organization.</td>
     <td align="center">394</td>
     <td align="center">4.3</td>
     <td align="center">203</td>
