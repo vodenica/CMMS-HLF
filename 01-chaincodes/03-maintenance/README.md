@@ -138,7 +138,7 @@ Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Ap
 
 ## Preventive maintenance work orders
 
-### chaincode function `CreatePreventiveWorkOrder`
+### Chaincode function `CreatePreventiveWorkOrder`
 
 The function `CreatePreventiveWorkOrder` creates a preventive work order. It takes 12 arguments. The first argument is the work order ID. The remaining 11 arguments are the work order's values.
 
@@ -152,7 +152,7 @@ peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.exa
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"ReadPreventiveWorkOrder","Args":["preventive-work-order-ID-0001"]}'
 ```
 
-### chaincode function `GetPreventiveWorkOrderHistory`
+### Chaincode function `GetPreventiveWorkOrderHistory`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetPreventiveWorkOrderHistory","Args":["preventive-work-order-ID-0001"]}'
@@ -207,7 +207,7 @@ Response body:
 ]
 ```
 
-### chaincode function `QueryPreventiveWorkOrderByID` and `QueryPreventiveWorkOrderByValidation`
+### Chaincode function `QueryPreventiveWorkOrderByID` and `QueryPreventiveWorkOrderByValidation`
 
 Request body:
 
@@ -272,7 +272,7 @@ JSON format:
 ]
 ```
 
-### chaincode function `UpdateWorkOrder`
+### Chaincode function `UpdateWorkOrder`
 
 Request body:
 
@@ -380,7 +380,7 @@ If we query the `history` of the preventive work order, we will get the followin
 
 ## Corrective Maintenance Work Orders
 
-### chaincode function `CreateCorrectiveWorkOrder`
+### Chaincode function `CreateCorrectiveWorkOrder`
 
 The function `CreateCorrectiveWorkOrder` does exactly that, creating a digital asset on the ledger, a so-called corrective work order. The function takes 12 arguments. The first argument is the ID of the work order. The remaining 11 arguments are the values of the work order.
 
@@ -388,19 +388,19 @@ The function `CreateCorrectiveWorkOrder` does exactly that, creating a digital a
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateCorrectiveWorkOrder","Args":["corrective-work-order-ID-0001", "corrective", "description", "Corrective work order general maintenance instructions", "{\"maintenance_supervisor\": \"Supervisor\", \"maintenance_technician_one\": \"Technician 01\", \"maintenance_technician_two\": \"Technician 02\", \"maintenance_technician_three\":\"Technician 03\", \"system_operator\":\"System Operator\"}", "{\"maintenance_process_step_one\": \"Step one\", \"maintenance_process_step_two\": \"Step two\", \"maintenance_process_step_three\": \"Step three\", \"maintenance_process_step_four\":\"Step four\", \"maintenance_process_step_five\":\"Step five\"}", "{\"maintenance_part_one\": \"Part one\", \"maintenance_part_two\": \"Part two\", \"maintenance_part_three\": \"Part three\",\"maintenance_part_four\": \"Part four\", \"maintenance_part_five\": \"Part five\", \"maintenance_part_six\":\"Part six\", \"maintenance_part_seven\":\"Part seven\", \"maintenance_part_eight\":\"Part eight\", \"maintenance_part_nine\":\"Part nine\", \"maintenance_part_ten\":\"Part ten\"}"]}'
 ```
 
-### chaincode function `ReadCorrectiveWorkOrder`
+### Chaincode function `ReadCorrectiveWorkOrder`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"ReadCorrectiveWorkOrder","Args":["corrective-work-order-ID-0001"]}'
 ```
 
-### chaincode function `UpdateCorrectiveWorkOrder`
+### Chaincode function `UpdateCorrectiveWorkOrder`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateCorrectiveWorkOrder","Args":["corrective-work-order-ID-0001", "corrective", "description", "Corrective work orders general instructions", "{\"maintenance_supervisor\": \"Supervisor\", \"maintenance_technician_one\": \"Technician 01\", \"maintenance_technician_two\": \"Technician 02\", \"maintenance_technician_three\":\"Technician 03\", \"system_operator\":\"System Operator\"}", "{\"maintenance_process_step_one\": \"Step one\", \"maintenance_process_step_two\": \"Step two\", \"maintenance_process_step_three\": \"Step three\", \"maintenance_process_step_four\":\"Step four\", \"maintenance_process_step_five\":\"Step five\"}", "{\"maintenance_part_one\": \"Part one\", \"maintenance_part_two\": \"Part two\", \"maintenance_part_three\": \"Part three\",\"maintenance_part_four\": \"Part four\", \"maintenance_part_five\": \"Part five\", \"maintenance_part_six\":\"Part six\", \"maintenance_part_seven\":\"Part seven\", \"maintenance_part_eight\":\"Part eight\", \"maintenance_part_nine\":\"Part nine\", \"maintenance_part_ten\":\"Part ten\"}"]}'
 ```
 
-### chaincode function `GetCorrectiveWorkOrderHistory`
+### Chaincode function `GetCorrectiveWorkOrderHistory`
 
 Request body:
 
@@ -499,7 +499,7 @@ Response body:
 ]
 ```
 
-### chaincode function `QueryCorrectiveWorkOrderByID` and `QueryCorrectiveWorkOrderByValidation`
+### Chaincode function `QueryCorrectiveWorkOrderByID` and `QueryCorrectiveWorkOrderByValidation`
 
 Request body:
 
@@ -516,7 +516,7 @@ peer chaincode query -C mychannel -n maintenance -c '{"Args":["QueryCorrectiveWo
 
 ## Failure Maintenance Work Orders
 
-### chaincode function `CreateFailureWorkOrder`
+### Chaincode function `CreateFailureWorkOrder`
 
 The function `CreateFailureWorkOrder` does exactly that, creating digital assets on the ledger so-called failure work order. The function takes 13 arguments. The first argument is the ID of the work order. The remaining 12 arguments are the values of the work order, including the `fault-ID`.
 
@@ -572,7 +572,7 @@ Response body:
 }
 ```
 
-### chaincode function `ReadFailureWorkOrder`
+### Chaincode function `ReadFailureWorkOrder`
 
 Request body:
 
@@ -580,13 +580,13 @@ Request body:
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"ReadFailureWorkOrder","Args":["failure-work-order-ID-0001"]}'
 ```
 
-### chaincode function `UpdateFailureWorkOrder`
+### Chaincode function `UpdateFailureWorkOrder`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateFailureWorkOrder","Args":["failure-work-order-ID-0001", "corrective", "Fault-ID-0001-Emergency Stop","description", "Failure work order general maintenance instructions", "{\"maintenance_supervisor\": \"Supervisor\", \"maintenance_technician_one\": \"Technician 01\", \"maintenance_technician_two\": \"Technician 02\", \"maintenance_technician_three\":\"Technician 03\", \"system_operator\":\"System Operator\"}", "{\"maintenance_process_step_one\": \"Step one\", \"maintenance_process_step_two\": \"Step two\", \"maintenance_process_step_three\": \"Step three\", \"maintenance_process_step_four\":\"Step four\", \"maintenance_process_step_five\":\"Step five\"}", "{\"maintenance_part_one\": \"Part one\", \"maintenance_part_two\": \"Part two\", \"maintenance_part_three\": \"Part three\",\"maintenance_part_four\": \"Part four\", \"maintenance_part_five\": \"Part five\", \"maintenance_part_six\":\"Part six\", \"maintenance_part_seven\":\"Part seven\", \"maintenance_part_eight\":\"Part eight\", \"maintenance_part_nine\":\"Part nine\", \"maintenance_part_ten\":\"Part ten\"}"]}'
 ```
 
-### chaincode function `GetFailureWorkOrderHistory`
+### Chaincode function `GetFailureWorkOrderHistory`
 
 Request body:
 
@@ -687,7 +687,7 @@ Response body:
 ]
 ```
 
-### chaincode function `QueryFailureWorkOrderByID` and `QueryFailureWorkOrderByValidation` and `QueryFailureWorkOrderByFaultID`
+### Chaincode function `QueryFailureWorkOrderByID` and `QueryFailureWorkOrderByValidation` and `QueryFailureWorkOrderByFaultID`
 
 Request body:
 
@@ -707,7 +707,7 @@ or
 peer chaincode query -C mychannel -n maintenance -c '{"Args":["QueryFailureWorkOrderByFaultID", "Fault-ID-0001-Emergency Stop"]}'
 ```
 
-### chaincode function `QueryFailureWorkOrders` by `query` string
+### Chaincode function `QueryFailureWorkOrders` by `query` string
 
 Request body:
 
