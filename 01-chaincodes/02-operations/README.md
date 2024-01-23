@@ -32,13 +32,13 @@ Spin up the `test-network`:
 ./network.sh up createChannel -ca -s couchdb
 ```
 
-Install the `Daily Operational Log` Smart Contract:
+Install the `Daily Operational Log` Chaincode:
 
 ```bash
 ./network.sh deployCC -ccn daily_ops_log -ccv 1.0 -ccp /[path-to-the-chaincode]/02-operations -ccl go
 ```
 
-To test the installed `Daily Operational Log Smart Contract`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
+To test the installed `Daily Operational Log Chaincode`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
 Run the following command:
 
 ```bash
@@ -111,7 +111,7 @@ Channels peers has joined:
 mychannel
 ```
 
-The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Smart Contract definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
+The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Chaincode definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
 
 ```bash
 peer lifecycle chaincode querycommitted --channelID mychannel --name daily_ops_log --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
@@ -125,7 +125,7 @@ Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Ap
 ```
 # Test Network
 
-## Smart contract function `CreateNewDailyOperationsLog`
+## Chaincode function `CreateNewDailyOperationsLog`
 
 The function `CreateNewDailyOperationsLog` is used to create daily operational logs. The function takes 13 arguments. The first argument is the ID of the risk assessment. The remaining 12 arguments are the values of the risk assessment. The function returns the ID of the risk assessment.
 
@@ -133,13 +133,13 @@ The function `CreateNewDailyOperationsLog` is used to create daily operational l
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateNewDailyOperationsLog","Args":["daily-ops-log-ID-0001", "createdBy", "{\"weather_drive_station_condition\": \"condition\", \"weather_drive_station_temperature\": \"temperature\", \"weather_drive_station_humidity\": \"humidity\"}", "{\"weather_return_station_condition\": \"condition\", \"weather_return_station_temperature\": \"temperature\", \"weather_return_station_humidity\": \"humidity\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "operations-start-time", "operations-end-time","10", "35", "2500", "25010", "no-comments"]}'
 ```
 
-## Smart contract function `ReadDailyOperationsLog`
+## Chaincode function `ReadDailyOperationsLog`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"ReadDailyOperationsLog","Args":["daily-ops-log-ID-0001"]}'
 ```
 
-## Smart contract function `ReadDailyOperationsLogHistory`
+## Chaincode function `ReadDailyOperationsLogHistory`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetDailyOperationsLogHistory","Args":["daily-ops-log-ID-0001"]}'
@@ -230,19 +230,19 @@ Response body:
 ]
 ```
 
-## Smart contract function `GetAllDailyOperationsLogs`
+## Chaincode function `GetAllDailyOperationsLogs`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetAllDailyOperationsLogs","Args":[]}'
 ```
 
-## Smart contract function `QueryDailyOperationsLog`
+## Chaincode function `QueryDailyOperationsLog`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["QueryDailyOperationsLog","{\"selector\":{\"owner\":\"createdBy\"}}" ]}'
 ```
 
-## Smart contract function `UpdateDailyOperationsLog`
+## Chaincode function `UpdateDailyOperationsLog`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n daily_ops_log --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateDailyOperationsLog","Args":["daily-ops-log-ID-0001", "createdBy", "{\"weather_drive_station_condition\": \"good\", \"weather_drive_station_temperature\": \"+32 C\", \"weather_drive_station_humidity\": \"91%\"}", "{\"weather_return_station_condition\": \"good\", \"weather_return_station_temperature\": \"+31 C\", \"weather_return_station_humidity\": \"91%\"}", "{\"personnel_on_duty_drive_station_shift_manager\": \"Shift Manager\", \"personnel_on_duty_drive_station_maintenance_technician_one\": \"Technician-1\", \"personnel_on_duty_drive_station_maintenance_technician_two\": \"Technician-2\",\"personnel_on_duty_drive_station_system_operator_one\": \"Operator-1\", \"personnel_on_duty_drive_station_system_operator_two\": \"Operator-2\"}","{\"personnel_on_duty_return_station_maintenance_technician\": \"Technician\", \"personnel_on_duty_return_station_system_operator\": \"Operator\"}", "10:00 am", "00:00 am","14", "30", "3000", "26000", "no-comments"]}'
