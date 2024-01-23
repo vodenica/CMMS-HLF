@@ -2,8 +2,8 @@
 
 # Proficiency Services Chaincode
 
-Proficiency services [chaincode](../proficiancy) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the training, custom training and assessment of the employee. I've used a complex smart contract repository from [fabric-contract-api-go](https://github.com/vodenica/fabric-contract-api-go.git) to create a proficiency chaincode.
-The smart contracts or chaincodes are also considered assessment parts, where smart contracts are used to update the state of the ledger with the results of the assessments, both theoretical and practical. Also, the total value is added to determine if the employee passes the evaluations from the dedicated model.
+Proficiency services [chaincode](../proficiancy) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the training, custom training and assessment of the employee. I've used a complex Chaincode repository from [fabric-contract-api-go](https://github.com/vodenica/fabric-contract-api-go.git) to create a proficiency chaincode.
+Chaincodes are also considered assessment parts, where chaincodes are used to update the state of the ledger with the results of the assessments, both theoretical and practical. Also, the total value is added to determine if the employee passes the evaluations from the dedicated model.
 Chaincode is tested on the [Kaleido](https://www.kaleido.io/) platform, and details of how these tests are performed can be found [here](Kaleido/README.md).
 
 ## Testing platforms
@@ -42,19 +42,19 @@ Spin up the `test-network`:
 ./network.sh up createChannel -ca -s couchdb
 ```
 
-Install the `Proficiency Operations` Smart Contract:
+Install the `Proficiency Operations` Chaincode:
 
 ```bash
 ./network.sh deployCC -ccn proficiency -ccv 1.0 -ccp /home/vodenica/Desktop/test-network-smart-contracts/05-CMS-competency/DEV-CMS-test -ccl go
 ```
 
-The new version of the smart contract is deployed to the `test-network` and the `test-network` is ready for testing. It is important to update the version in the `main.go` file before deploying the smart contract.
+The new version of the Chaincode is deployed to the `test-network` and the `test-network` is ready for testing. It is important to update the version in the `main.go` file before deploying the Chaincode.
 
 ```bash
 ./network.sh deployCC -ccn proficiency -ccv 2.0 -ccp /home/vodenica/Desktop/test-network-smart-contracts/03-MTE-maintenance -ccl go
 ```
 
-To test the installed `Proficiency Operations Smart Contract`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
+To test the installed `Proficiency Operations Chaincode`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
 Run the following command:
 
 ```bash
@@ -127,7 +127,7 @@ Channels peers has joined:
 mychannel
 ```
 
-The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Smart Contract definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
+The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Chaincode definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
 
 ```bash
 peer lifecycle chaincode querycommitted --channelID mychannel --name proficiency --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
@@ -142,7 +142,7 @@ Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Ap
 
 # Test Network
 
-## Smart contract function `CreateNewModuleOne`
+## Chaincode function `CreateNewModuleOne`
 
 The function `CreateNewModuelOne` is used to create a proficiency module one for training purposes. The function takes 6 arguments. The first argument is the ID of the module. The remaining 5 arguments are the values of the module.
 
@@ -196,7 +196,7 @@ The `JSON` format data of the created proficiency module one on the ledger is as
 }
 ```
 
-## Smart contract function `GetHistoryRecordsForModuleOne`
+## Chaincode function `GetHistoryRecordsForModuleOne`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n proficiency --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetHistoryRecordsForModuleOne","Args":["proficiency-module-one-ID-0001"]}'
@@ -252,7 +252,7 @@ Response body:
 ]
 ```
 
-## Smart contract function `UpdateStatusChapterOneModuleOneToCompleted`
+## Chaincode function `UpdateStatusChapterOneModuleOneToCompleted`
 
 Request body:
 
@@ -353,7 +353,7 @@ The `JSON` data format response:
 ]
 ```
 
-## Smart contract function `UpdateValueTheoreticalAssessment`
+## Chaincode function `UpdateValueTheoreticalAssessment`
 
 Assuming that the candidate has passed the theoretical assessment, we can update the value of the theoretical assessment to 75%. The command can be passed as follows below.
 
@@ -363,7 +363,7 @@ Request body:
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n proficiency --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateValueTheoreticalAssessment","Args":["proficiency-module-one-ID-0001", "75"]}'
 ```
 
-## Smart contract function `UpdateValuePracticalAndTotalAssessment`
+## Chaincode function `UpdateValuePracticalAndTotalAssessment`
 
 Assuming that the candidate has passed the practical assessment, we can update the value of the practical assessment to 100%. The command can be passed as follows below.
 
@@ -419,7 +419,7 @@ Response `JSON` format data on the ledger:
 }
 ```
 
-## Smart contract function `GetHistoryRecordsForModuleOne`
+## Chaincode function `GetHistoryRecordsForModuleOne`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n proficiency --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetHistoryRecordsForModuleOne","Args":["proficiency-module-one-ID-0001"]}'
@@ -651,7 +651,7 @@ Response body:
 
 # Kaleido testing
 
-## Smart contract function `CreateNewModuleOne`
+## Chaincode function `CreateNewModuleOne`
 
 Request body:
 
@@ -745,7 +745,7 @@ Response body in `JSON` format of the created asset:
 }
 ```
 
-## Smart contract function `UpdateValueTheoreticalAssessment`
+## Chaincode function `UpdateValueTheoreticalAssessment`
 
 Assuming that the candidate has passed the theoretical assessment, we can update the value of the theoretical assessment to 75%. The command can be passed as follows below.
 
@@ -828,7 +828,7 @@ Reposne body in `JSON` format recorded on the ledger:
 }
 ```
 
-## Smart contract function `UpdateStatusChapterOneModuleOneToCompleted`
+## Chaincode function `UpdateStatusChapterOneModuleOneToCompleted`
 
 Assuming that the candidate has passed the theoretical assessment, we can update the status of the chapter one to completed. The command can be passed as follows below.
 
@@ -911,7 +911,7 @@ Response body in `JSON` format as is recorded on the ledger:
 }
 ```
 
-## Smart contract function `UpdateStatusChapterTwoModuleOneToCompleted`
+## Chaincode function `UpdateStatusChapterTwoModuleOneToCompleted`
 
 Assuming that the candidate has passed the theoretical assessment, we can update the status of the chapter two to completed. The command can be passed as follows below.
 
@@ -994,7 +994,7 @@ Response body in `JSON` format as recorded on the ledger:
 }
 ```
 
-## Smart contract function `UpdateStatusChapterThreeModuleOneToCompleted`
+## Chaincode function `UpdateStatusChapterThreeModuleOneToCompleted`
 
 Assuming that the candidate has passed the theoretical assessment, we can update the status of the chapter three to completed. The command can be passed as follows below.
 
@@ -1158,7 +1158,7 @@ Response body in `JSON` formate as recorded on the ledger:
 }
 ```
 
-## Smart contract function `GetHistoryRecordsForModuleOne`
+## Chaincode function `GetHistoryRecordsForModuleOne`
 
 Request body `POST /query`:
 
