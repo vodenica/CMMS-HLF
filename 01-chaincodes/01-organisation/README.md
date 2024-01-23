@@ -442,7 +442,7 @@ Response body in `JSON` format:
   }
 ]
 ```
-[Back to top](#organisational-services-chaincode)
+[Back to top](#organizational-services-chaincode)
 
 # Kaleido Testing
 
@@ -508,7 +508,7 @@ Response body:
   "status": "VALID"
 }
 ```
-[Back to top](#organisational-services-chaincode)
+[Back to top](#organizational-services-chaincode)
 
 # Caliper testing
 
@@ -543,7 +543,7 @@ Execution:
 ```bash
 npx caliper launch manager --caliper-workspace ./ --caliper-networkconfig networks/fabric/test-network.yaml --caliper-benchconfig benchmarks/samples/fabric/organisation/config.yaml --caliper-flow-only-test --caliper-fabric-gateway-enabled
 ```
-[Back to top](#organisational-services-chaincode)
+[Back to top](#organizational-services-chaincode)
 
 ## Test network measurement results
 
@@ -561,6 +561,6 @@ The measurement results are shown below for the function `AddNewEmployee`:
 
 **Figure 3** - Organisational chaincode benchmarking parameters: Impact of the number of transactions per second on throughput put for the “Read” function.
 
-[Back to top](#organisational-services-chaincode)
+[Back to top](#organizational-services-chaincode)
 
 #### End of the page.
