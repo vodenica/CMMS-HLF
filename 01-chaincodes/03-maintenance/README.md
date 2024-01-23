@@ -36,13 +36,13 @@ Spin up the `test-network`:
 ./network.sh up createChannel -ca -s couchdb
 ```
 
-Install the `Maintenance Operations` Smart Contract:
+Install the `Maintenance Operations` chaincode:
 
 ```bash
 ./network.sh deployCC -ccn maintenance -ccv 1.0 -ccp /home/vodenica/Desktop/test-network-smart-contracts/03-MTE-maintenance -ccl go
 ```
 
-The new version of the smart contract is deployed to the `test-network` and the `test-network` is ready for testing. It is important to update the version in the `main.go` file before deploying the smart contract.
+The new version of the smart contract is deployed to the `test-network`, which is ready for testing. Before deploying the smart contract, it is important to update the version in the `main.go` file.
 
 ```bash
 ./network.sh deployCC -ccn maintenance -ccv 2.0 -ccp /home/vodenica/Desktop/test-network-smart-contracts/03-MTE-maintenance -ccl go
