@@ -331,7 +331,7 @@ JSON file of the created Daily Operation Log:
 	"init": false
 }
 ```
-[Back on top](#operations-services-chaincode)
+[Back on top](#operational-services-chaincode)
 
 # Caliper testing
 
@@ -378,7 +378,7 @@ The report will be generated in the `caliper-benchmarks` directory as `report.ht
 ```bash
 cd /home/vodenica/go/src/github.com/hyperledger/caliper-benchmarks
 ```
-[Back on top](#operations-services-chaincode)
+[Back on top](#operational-services-chaincode)
 
 ## Test network measurement results
 
