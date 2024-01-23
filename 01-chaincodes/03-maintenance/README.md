@@ -74,7 +74,7 @@ export CORE_PEER_ADDRESS=localhost:7051
 ```
 
 During the development environment setup phase, we downloaded Hyperledger Fabric
-binaries including peer. They are located in the `fabric-samples/bin` folder and utilize
+binaries, including peer. They are located in the `fabric-samples/bin` folder and utilize
 configurations stored in `fabric-samples/config`. Therefore, we can update the `PATH` variable
 and set `FABRIC_CFG_PATH` to simplify `peer binary usage.
 
@@ -121,7 +121,7 @@ Channels peers has joined:
 mychannel
 ```
 
-The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Smart Contract definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
+The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. If all targeted peers return successful responses, the Smart Contract definition is committed to the channel. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
 
 ```bash
 peer lifecycle chaincode querycommitted --channelID mychannel --name maintenance --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
@@ -140,7 +140,7 @@ Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Ap
 
 ### Smart contract function `CreatePreventiveWorkOrder`
 
-The function `CreatePreventiveWorkOrder` is used to create a preventive work order. The function takes 12 arguments. The first argument is the ID of the work order. The remaining 11 arguments are the values of the work order.
+The function `CreatePreventiveWorkOrder` creates a preventive work order. It takes 12 arguments. The first argument is the work order ID. The remaining 11 arguments are the work order's values.
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreatePreventiveWorkOrder","Args":["preventive-work-order-ID-0001", "preventive", "description", "preventive work orders general instructions", "{\"maintenance_supervisor\": \"Supervisor\", \"maintenance_technician_one\": \"Technician 01\", \"maintenance_technician_two\": \"Technician 02\", \"maintenance_technician_three\":\"Technician 03\", \"system_operator\":\"System Operator\"}", "{\"maintenance_process_step_one\": \"Step one\", \"maintenance_process_step_two\": \"Step two\", \"maintenance_process_step_three\": \"Step three\", \"maintenance_process_step_four\":\"Step four\", \"maintenance_process_step_five\":\"Step five\"}", "{\"maintenance_part_one\": \"Part one\", \"maintenance_part_two\": \"Part two\", \"maintenance_part_three\": \"Part three\",\"maintenance_part_four\": \"Part four\", \"maintenance_part_five\": \"Part five\", \"maintenance_part_six\":\"Part six\", \"maintenance_part_seven\":\"Part seven\", \"maintenance_part_eight\":\"Part eight\", \"maintenance_part_nine\":\"Part nine\", \"maintenance_part_ten\":\"Part ten\"}"]}'
@@ -382,7 +382,7 @@ If we query the `history` of the preventive work order, we will get the followin
 
 ### Smart contract function `CreateCorrectiveWorkOrder`
 
-The function `CreateCorrectiveWorkOrder` does exactly that, creating a digital asset on the ledger so-called corrective work order. The function takes 12 arguments. The first argument is the ID of the work order. The remaining 11 arguments are the values of the work order.
+The function `CreateCorrectiveWorkOrder` does exactly that, creating a digital asset on the ledger, a so-called corrective work order. The function takes 12 arguments. The first argument is the ID of the work order. The remaining 11 arguments are the values of the work order.
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n maintenance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateCorrectiveWorkOrder","Args":["corrective-work-order-ID-0001", "corrective", "description", "Corrective work order general maintenance instructions", "{\"maintenance_supervisor\": \"Supervisor\", \"maintenance_technician_one\": \"Technician 01\", \"maintenance_technician_two\": \"Technician 02\", \"maintenance_technician_three\":\"Technician 03\", \"system_operator\":\"System Operator\"}", "{\"maintenance_process_step_one\": \"Step one\", \"maintenance_process_step_two\": \"Step two\", \"maintenance_process_step_three\": \"Step three\", \"maintenance_process_step_four\":\"Step four\", \"maintenance_process_step_five\":\"Step five\"}", "{\"maintenance_part_one\": \"Part one\", \"maintenance_part_two\": \"Part two\", \"maintenance_part_three\": \"Part three\",\"maintenance_part_four\": \"Part four\", \"maintenance_part_five\": \"Part five\", \"maintenance_part_six\":\"Part six\", \"maintenance_part_seven\":\"Part seven\", \"maintenance_part_eight\":\"Part eight\", \"maintenance_part_nine\":\"Part nine\", \"maintenance_part_ten\":\"Part ten\"}"]}'
@@ -803,7 +803,7 @@ Request body:
 
 # Caliper Testing
 
-Just to let you know, the certificate must be adjusted after running the test network. The code below is shown where we can take the MSP credentials, and adjust them into the [`test-network.yaml`](../../02-benchmarking-files/hyperledger-caliper/caliper-benchmarks/networks/fabric/test-network.yaml) file.
+The certificate must be adjusted after running the test network. The code below shows how we can take the MSP credentials and adjust them into the [`test-network.yaml`](../../02-benchmarking-files/hyperledger-caliper/caliper-benchmarks/networks/fabric/test-network.yaml) file.
 
 Cleanup the terminal:
 
