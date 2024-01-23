@@ -32,13 +32,13 @@ Spin up the `test-network`:
 ./network.sh up createChannel -ca -s couchdb
 ```
 
-Install the `Organisational` Smart Contract:
+Install the `Organisational` Chaincode:
 
 ```bash
 ./network.sh deployCC -ccn organisation -ccv 1.0 -ccp /[path-to-the-chaincode]/01-organisation -ccl go
 ```
 
-To test the installed `Organizational Processes Services Smart Contract`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
+To test the installed `Organizational Processes Services Chaincode`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
 Run the following command:
 
 ```bash
@@ -64,7 +64,7 @@ export CORE_PEER_ADDRESS=localhost:7051
 ```
 
 During the development environment setup phase, we downloaded Hyperledger Fabric
-binaries including peer. They are located in the `fabric-samples/bin` folder and utilize
+binaries, including peer. They are located in the `fabric-samples/bin` folder and utilize
 configurations stored in `fabric-samples/config. Therefore, we can update the `PATH variable
 and set `FABRIC_CFG_PATH` to simplify `peer binary usage.
 
@@ -111,7 +111,7 @@ Channels peers has joined:
 mychannel
 ```
 
-The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Smart Contract definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
+The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Chaincode definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
 
 ```bash
 peer lifecycle chaincode querycommitted --channelID mychannel --name organisation --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
@@ -125,7 +125,7 @@ Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Ap
 ```
 # Test Network
 
-## Smart contract function `AddNewEmployee`
+## Chaincode function `AddNewEmployee`
 
 The function `AddNewEmployee` is used to create a new purchase order.
 
@@ -165,7 +165,7 @@ _The composite key is _used for _the _READEmployee__ function__
 }
 ```
 
-## Smart contract function `ReadEmployee`
+## Chaincode function `ReadEmployee`
 
 The function `ReadEmployee` is used to read the employee data from the ledger. The function takes 1 argument so-called `composite-key`. The first argument is the ID of the employee in the form of the composite key.
 
@@ -202,7 +202,7 @@ Response body in `JSON` format:
 }
 ```
 
-## Smart contract function `UpdateEmployeeStatusForModuleOneTrainingInProgress`:
+## Chaincode function `UpdateEmployeeStatusForModuleOneTrainingInProgress`:
 
 The function `UpdateEmployeeStatusForModuleOneTrainingInProgress` is used to update the employee status for module one training in progress. The function takes 1 argument so-called `composite-key`. The first argument is the ID of the employee in the form of the composite key.
 
@@ -239,7 +239,7 @@ Response body in `JSON` format after using the function `ReadEmployee`:
 }
 ```
 
-## Smart contract function `UpdateEmployeeStatusForModuleOneTrainingCompleted`:
+## Chaincode function `UpdateEmployeeStatusForModuleOneTrainingCompleted`:
 
 The function `UpdateEmployeeStatusForModuleOneTrainingCompleted` is used to update the employee status for module one training completed. The function takes 1 argument so-called `composite-key`. The first argument is the ID of the employee in the form of the composite key.
 
@@ -276,7 +276,7 @@ Response in the `JSON` format when using the function `ReadEmployee`
 }
 ```
 
-## Smart contract function `PromoteEmployee`:
+## Chaincode function `PromoteEmployee`:
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n organization --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"PromoteEmployee","Args":["001", "General Manager"]}'
@@ -314,7 +314,7 @@ Response in the `JSON` format:
 }
 ```
 
-## Smart contract function `GetEmployeeHistory`:
+## Chaincode function `GetEmployeeHistory`:
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n organization --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetEmployeeHistory","Args":["001"]}'
@@ -453,7 +453,7 @@ From a terminal, navigate to the subdirectory where the chaincode is and build t
 GOOS=linux GOARCH=amd64 go build -o [chaincode-name].bin
 ```
 
-## Smart contract function `AddNewEmployee`
+## Chaincode function `AddNewEmployee`
 
 The function `AddNewEmployee` is used to create a new purchase order.
 
