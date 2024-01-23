@@ -2,7 +2,7 @@
 
 # Health and Safety Management Processes Chaincode
 
-An enterprise's Health and Safety management processes are generally called a Health and Safety Management System (HSMS). It is a set of processes and procedures that help an organization manage its health and safety risks. It can identify, assess, control and monitor health and safety risks. While an HSMS aims to prevent workplace injuries, illnesses, and deaths, the processes and procedures used can vary between enterprises based on their needs and requirements.
+An enterprise's Health and Safety management processes are generally called a Health and Safety Management System (HSMS). It is a set of processes and procedures that help an organization manage its health and safety risks. It can identify, assess, control, and monitor health and safety risks. While an HSMS aims to prevent workplace injuries, illnesses, and deaths, the processes and procedures used can vary between enterprises based on their needs and requirements.
 
 The `chaincode` for Health & Safet processess can be accessed [here](../05-safety-management)
 
@@ -59,13 +59,13 @@ Spin up the `test-network`:
 ./network.sh up createChannel -ca -s couchdb
 ```
 
-Install the `Health & Safety Smart ContractSmart Contract`
+Install the `Health & Safety Chaincode`
 
 ```bash
 ./network.sh deployCC -ccn health_and_safety_smart_contract -ccv 1.0 -ccp /home/vodenica/Desktop/test-network-smart-contracts/06-SMS-safety-management-for-test-network -ccl go
 ```
 
-To test the installed `Health & Safety Smart COntract`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
+To test the installed `Health & Safety Chaincode`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
 Run the following command:
 
 ```bash
@@ -91,7 +91,7 @@ export CORE_PEER_ADDRESS=localhost:7051
 ```
 
 During the development environment setup phase, we downloaded Hyperledger Fabric
-binaries including peer. They are located in the `fabric-samples/bin` folder and utilize
+binaries, including peer. They are located in the `fabric-samples/bin` folder and utilize
 configurations stored in `fabric-samples/config. Therefore, we can update the `PATH variable
 and set `FABRIC_CFG_PATH` to simplify `peer binary usage.
 
@@ -138,7 +138,7 @@ Channels peers has joined:
 mychannel
 ```
 
-The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Smart Contract definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
+The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Chaincode definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
 
 ```bash
 peer lifecycle chaincode querycommitted --channelID mychannel --name health_and_safety_smart_contract --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
@@ -154,7 +154,7 @@ Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Ap
 
 ## Risk assessments
 
-### Smart contract function `CreateRiskAssessment`
+### Chaincode function `CreateRiskAssessment`
 
 The function `CreateRiskAssessment` is used to create a risk assessment. The function takes 13 arguments. The first argument is the ID of the risk assessment. The remaining 12 arguments are the values of the risk assessment. The function returns the ID of the risk assessment.
 
@@ -171,17 +171,17 @@ or with `Working on cable car cabins`
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateRiskAssessment","Args":["", "Risk-Assessment ID - RA-12350", "2023-09-01", "2024-03-01", "Working on cable car cabins", "Alice", "Bob", "Tom", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius.", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius."]}'
 ```
-### Smart contract function `ReadRiskAssessment`
+### Chaincode function `ReadRiskAssessment`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"ReadRiskAssessment","Args":["Risk-Assessment ID - RA-12345"]}'
 ```
-### Smart contract function `UpdateRiskAssessmentActivity`
+### Chaincode function `UpdateRiskAssessmentActivity`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateRiskAssessmentActivity","Args":["Risk-Assessment ID - RA-12345", "Grip Maintenance"]}'
 ```
-### Smart contract function `QueryRiskAssessments` WORKING!!!
+### Chaincode function `QueryRiskAssessments` WORKING!!!
 
 Query risk assessments by who create them:
 
@@ -204,7 +204,7 @@ Query risk assessments by activity:
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["QueryRiskAssessments","{"selector":{"risk_assessment_activity":"Grip Maintenance"}}"]}'
 ```
-### Smart contract function `GetRiskAssessmentHistory`
+### Chaincode function `GetRiskAssessmentHistory`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetRiskAssessmentHistory","Args":["Risk-Assessment ID - RA-12345"]}'
@@ -256,7 +256,7 @@ The response body for the function `GetRiskAssessmentHistory` is:
   }
 ]
 ```
-### Smart contract function `GetRiskAssessmentByRange`:
+### Chaincode function `GetRiskAssessmentByRange`:
 
 Function:
 
@@ -355,7 +355,7 @@ Response body:
 
 ## Accident / Incident Reports
 
-### Smart contract function `CreateAccidentIncidentReport`
+### Chaincode function `CreateAccidentIncidentReport`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"CreateAccidentIncidentReport","Args":["", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "not-set", "2", "not-set", "not-set", "not-set", "not-set"]}'
@@ -418,7 +418,7 @@ Respons in `JSON` format how it is stored on the ledger:
   "~version": "CgMBKgA="
 }
 ```
-### Smart contract function `ReadAccidentIncidentReport`
+### Chaincode function `ReadAccidentIncidentReport`
 
 ```bash
 peer chaincode query -C mychannel -n health_and_safety_smart_contract -c '{"Args":["ReadAccidentIncidentReport","Accident-Incident-Report-ID-00001"]}'
@@ -449,12 +449,12 @@ Response body:
   "accident_incident_report_line_of_communication": "Alice to Bob"
 }
 ```
-### Updated smart contract `UpdateAccidentIncidentReportTimeEnd`
+### Updated Chaincode `UpdateAccidentIncidentReportTimeEnd`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateAccidentIncidentReportTimeEnd","Args":["Accident-Incident-Report-ID-00001", "2023-09-01 22:55"]}'
 ```
-### Smart contract function `UpdateAccidentIncidentReportValidated`
+### Chaincode function `UpdateAccidentIncidentReportValidated`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"UpdateAccidentIncidentReportValidated","Args":["Accident-Incident-Report-ID-00001"]}'
@@ -579,7 +579,7 @@ The response body:
   }
 ]
 ```
-### Smart contract function `QueryIncidentReports`
+### Chaincode function `QueryIncidentReports`
 
 Command to query all incident reports by who created them:
 
@@ -587,7 +587,7 @@ Command to query all incident reports by who created them:
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n health_and_safety_smart_contract --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"Args":["QueryIncidentReports","{\"selector\":{\"accident_incident_report_created_by\":\"Alice\"}}"]}'
 ```
 
-### Smart contract function `QueryIncidentReports`
+### Chaincode function `QueryIncidentReports`
 
 Command to query all incident reports by status `open` or `close`:
 
