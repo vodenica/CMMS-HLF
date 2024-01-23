@@ -7,12 +7,12 @@ Creating chaincodes for the financial services of a company shall support the ma
 
 - The setting of the company’s broad financial strategy.
 - Budget and Cost Controlling.
-- Data modelling for Financial planning and reporting.
+- Data modeling for Financial planning and reporting.
 - Decisions on significant capital expenditure on new assets.
 - Interpretation and implications of macro and micro economic-financial developments for the enterprise.
 - Importance for the company of Government economic and fiscal (tax) legislation and proposals.
 
-The chaincode for the Financial services of an enterprise can be accessed [here](../fin-chaincode).
+The chaincode for an enterprise's Financial services can be accessed [here](../fin-chaincode).
 
 ## Testing platforms
 * Hyperledger Fabric `test-network` with `Caliper` benchmarking testing framework ([`Caliper Testing`](#caliper-testing) & [`Test Network`](#test-network)).
@@ -42,19 +42,19 @@ Spin up the `test-network`:
 ./network.sh up createChannel -ca -s couchdb
 ```
 
-Install the `Financial Operations` Smart Contract:
+Install the `Financial Operations` Chaincode:
 
 ```bash
 ./network.sh deployCC -ccn finance -ccv 1.0 -ccp //home/vodenica/Desktop/test-network-smart-contracts/08-Financial-Services/fin-chaincode -ccl go
 ```
 
-The new version of the smart contract is deployed to the `test-network` and the `test-network` is ready for testing. It is important to update the version in the `main.go` file before deploying the smart contract.
+The new version of the Chaincode is deployed to the `test-network` and the `test-network` is ready for testing. It is important to update the version in the `main.go` file before deploying the Chaincode.
 
 ```bash
 ./network.sh deployCC -ccn finance -ccv 1.0 -ccp //home/vodenica/Desktop/test-network-smart-contracts/08-Financial-Services/fin-chaincode -ccl go
 ```
 
-To test the installed `Financial Operations Services Smart Contract`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
+To test the installed `Financial Operations Services Chaincode`, navigate to `fabric-samples/test-network` and define all necessary environment variables for `Org1MSP`. Note that TLS is enabled in `test-network`.
 Run the following command:
 
 ```bash
@@ -127,7 +127,7 @@ Channels peers has joined:
 mychannel
 ```
 
-The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Smart Contract definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
+The commit transaction is submitted to peers of both `Org1MSP` and `Org2MSP`. The Chaincode definition is committed to the channel if all targeted peers return successful responses. To confirm this, use the peer lifecycle chaincode `querycommitted` command.
 
 ```bash
 peer lifecycle chaincode querycommitted --channelID mychannel --name finance --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
@@ -143,14 +143,14 @@ Version: 1.0, Sequence: 1, Endorsement Plugin: escc, Validation Plugin: vscc, Ap
 
 ## Purchase Order
 
-### Smart contract function `NewPurchaseRequestMtncParts`
+### Chaincode function `NewPurchaseRequestMtncParts`
 
 The function `NewPurchaseRequestMtncParts` is used to create a new purchase order.
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"NewPurchaseRequestMtncParts","Args":["purchase-request", "maintenance-parts", "{\"cost_code_item_one\":\"11111\", \"item_description\":\"Maintenance Part\",\"item_one_cost\":100,\"item_one_quantity\":2,\"item_one_total_cost\":200}", "{\"cost_code_item_two\":\"22222\", \"item_description\":\"Maintenance Part\",\"item_two_cost\":100,\"item_two_quantity\":2,\"item_two_total_cost\":200}", "{\"cost_code_item_three\":\"33333\", \"item_description\":\"Maintenance Part\",\"item_three_cost\":100,\"item_three_quantity\":2,\"item_three_total_cost\":200}", "{\"cost_code_item_four\":\"44444\", \"item_description\":\"Maintenance Part\",\"item_four_cost\":100,\"item_four_quantity\":2,\"item_four_total_cost\":200}", "{\"cost_code_item_five\":\"55555\", \"item_description\":\"Maintenance Part\",\"item_five_cost\":100,\"item_five_quantity\":2,\"item_five_total_cost\":200}", "Supplier ID: 123456", "The Purchase Order is issued for the purchase of the maintenance spare parts.", "No remarks"]}'
 ```
-### Smart contract function `UpdatePurchaseOrderToApproved`
+### Chaincode function `UpdatePurchaseOrderToApproved`
 
 The function `UpdatePurchaseOrderToApproved` is used to update the purchase order status to approved. The function takes 3 argument. The first argument is the ID of the purchase order, the second argument is the name of the person who approved the purchase order, and the third argument is the integer which represents the approval status.
 
@@ -218,7 +218,7 @@ Response:
   "~version": "CgMBDQA="
 }
 ```
-### Smart contract function `GetPurchaseRequestByID`
+### Chaincode function `GetPurchaseRequestByID`
 
 The function `GetPurchaseOrderByID` is used to get the purchase order by ID. The function takes 1 argument. The first argument is the ID of the purchase order.
 
@@ -285,7 +285,7 @@ Response body:
   "purchase_request_remarks": "No remarks"
 }
 ```
-### Smart contract function `UpdateSignOffReceivedGoods`
+### Chaincode function `UpdateSignOffReceivedGoods`
 
 The function `UpdateSignOffReceivedGoods` is used to update the purchase order status to approved. The function takes 3 argument. The first argument is the ID of the purchase order, the second argument is the name of the person who approved the purchase order, and the third argument is the integer which represents the approval status.
 
@@ -351,7 +351,7 @@ Response `JSON` format data:
 }
 ```
 
-### Smart contract function `GetPurchaseRequestHistory`
+### Chaincode function `GetPurchaseRequestHistory`
 
 The function `GetPurchaseRequestHistory` is used to get the history of the purchase request. The function takes 1 argument. The first argument is the ID of the purchase request.
 
@@ -543,7 +543,7 @@ Response body in `JSON` format:
 ```
 ## Operations Invoice
 
-### Smart contract function `NewInvoiceOperationalServices`
+### Chaincode function `NewInvoiceOperationalServices`
 
 The function `NewInvoiceOperationalServices` is used to create a new invoice for operational services. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -578,7 +578,7 @@ The `JSON` form data of the created operational invoice on the ledger is as foll
 }
 ```
 
-### Smart contract function `UpdateInvoiceOpsStatusToApproved`
+### Chaincode function `UpdateInvoiceOpsStatusToApproved`
 
 The function `UpdateInvoiceOpsStatusToApproved` is used to update the invoice status to approved. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -613,7 +613,7 @@ Response body:
 }
 ```
 
-### Smart contract function `GetInvoiceByID`
+### Chaincode function `GetInvoiceByID`
 
 The function `GetInvoiceByID` is used to get the invoice by ID. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -647,7 +647,7 @@ The `JSON` data format response:
 }
 ```
 
-### Smart contract function `GetInvoiceOpsRequestHistory`
+### Chaincode function `GetInvoiceOpsRequestHistory`
 
 The function `GetInvoiceOpsRequestHistory` is used to get the history of the invoice request. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -713,7 +713,7 @@ Response `JSON` format data on the ledger:
 ```
 ## Additional Work Invoice
 
-### Smart contract function `NewInvoiceAdditionalWork`
+### Chaincode function `NewInvoiceAdditionalWork`
 
 ```bash
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile ${PWD}/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance --peerAddresses localhost:7051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles ${PWD}/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"NewInvoiceAdditionalWork","Args":["invoice", "additional-work", "INV-WORK-20230920-0001", "The Invoice is issued for the completed additional works.", "1000", "1", "{\"invoice_item_one_qty\":2, \"invoice_item_one_item_cost\":100, \"invoice_item_one_cost\":200}", "{\"invoice_item_two_qty\":1, \"invoice_item_two_item_cost\":50, \"invoice_item_two_cost\":50}", "{\"invoice_item_three_qty\":4, \"invoice_item_three_item_cost\":25, \"invoice_item_three_cost\":100}", "{\"invoice_item_four_qty\":3, \"invoice_item_four_item_cost\":50, \"invoice_item_four_cost\":150}", "{\"invoice_item_five_qty\":30, \"invoice_item_five_item_cost\":4, \"invoice_item_five_cost\":120}"]}'
@@ -767,7 +767,7 @@ Response body in `JSON` format, as recorded on the ledger:
 }
 ```
 
-### Smart contract function `UpdateInvoiceAddWorkStatusToApproved`
+### Chaincode function `UpdateInvoiceAddWorkStatusToApproved`
 
 The function `UpdateInvoiceAddWorkStatusToApproved` is used to update the invoice status to approved. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -781,7 +781,7 @@ Response:
 2023-09-20 07:37:19.206 CST [chaincodeCmd] chaincodeInvokeOrQuery -> INFO 001 Chaincode invoke successful. result: status:200
 ```
 
-### Smart contract function `GetInvoiceAddWorkByID`
+### Chaincode function `GetInvoiceAddWorkByID`
 
 The function `GetInvoiceAddWorkByID` is used to get the invoice by ID. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -791,7 +791,7 @@ Request body:
 peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.example.com --tls --cafile /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem -C mychannel -n finance --peerAddresses localhost:7051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles /home/vodenica/go/src/github.com/hyperledger/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt -c '{"function":"GetInvoiceWorkByID","Args":["INV-WORK-20230920-0001"]}'
 ```
 
-### Smart contract function `GetInvoiceWorkRequestHistory`
+### Chaincode function `GetInvoiceWorkRequestHistory`
 
 The function `GetInvoiceWorkRequestHistory` is used to get the history of the invoice request. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -806,7 +806,7 @@ peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.exa
 
 ## Purchase requests
 
-### Smart contract function `NewPurchaseRequestMtncParts`
+### Chaincode function `NewPurchaseRequestMtncParts`
 
 The function `NewPurchaseRequestMtncParts` is used to create a new purchase request for maintenance parts. The function takes 1 argument. The first argument is the ID of the purchase request.
 
@@ -920,7 +920,7 @@ Response body recorded on the ledger in `JSON` format:
 }
 ```
 
-### Smart contract function `UpdatePurchaseOrderToApproved`
+### Chaincode function `UpdatePurchaseOrderToApproved`
 
 Request body:
 
@@ -1015,7 +1015,7 @@ Response body on the ledger in `JSON` format:
   "purchase_request_remarks": "No remarks"
 }
 ```
-### Smart contract function `GetPurchaseRequestHistory`
+### Chaincode function `GetPurchaseRequestHistory`
 
 Request body:
 
@@ -1221,7 +1221,7 @@ Response body:
   ]
 }
 ```
-### Smart contract function `QueryPurchaseRequest`
+### Chaincode function `QueryPurchaseRequest`
 
 Querying the world state using the index `indexStatusOfRequest`:
 
@@ -1435,7 +1435,7 @@ Response body:
 ```
 ## Operations Invoice
 
-### Smart contract function `NewInvoiceOperationalServices`
+### Chaincode function `NewInvoiceOperationalServices`
 
 The function `NewInvoiceOperationalServices` is used to create a new invoice for operations. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -1496,7 +1496,7 @@ Response body in `JSON` format recorded on the ledger:
   "invoice_status": "Issued"
 }
 ```
-### Smart contract function `UpdateInvoiceOpsStatusToApproved`
+### Chaincode function `UpdateInvoiceOpsStatusToApproved`
 
 The function `UpdateInvoiceOpsStatusToApproved` is used to update the invoice status to approved. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -1559,7 +1559,7 @@ Response body in `JSON` format recorded on the ledger:
   "invoice_status": "Issued"
 }
 ```
-### Smart contract function `GetInvoiceOpsRequestHistory`
+### Chaincode function `GetInvoiceOpsRequestHistory`
 
 The function `GetInvoiceOpsRequestHistory` is used to get the history of the invoice request. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -1642,7 +1642,7 @@ Response body in `JSON` format:
   ]
 }
 ```
-### Smart contract function `GetInvoiceOpsByID`
+### Chaincode function `GetInvoiceOpsByID`
 
 The function `GetInvoiceOpsByID` is used to get the invoice by ID. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -1694,7 +1694,7 @@ Response body:
   }
 }
 ```
-### Smart contract function `QueryInvoiceOps`
+### Chaincode function `QueryInvoiceOps`
 
 Querying the world state using the query index.
 
@@ -1752,7 +1752,7 @@ Response body in `JSON` format:
 ```
 ## Additional Work Invoice
 
-### Smart contract function `NewInvoiceAdditionalWork`
+### Chaincode function `NewInvoiceAdditionalWork`
 
 The function `NewInvoiceAdditionalWork` is used to create a new invoice for additional work. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -1845,7 +1845,7 @@ Response body in `JSON` format recorded on the ledger:
   "invoice_status": "Issued"
 }
 ```
-### Smart contract function `UpdateInvoiceWorkStatusToApproved`
+### Chaincode function `UpdateInvoiceWorkStatusToApproved`
 
 The function `UpdateInvoiceWorkStatusToApproved` is used to update the invoice status to approved. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -1927,7 +1927,7 @@ Response body in `JSON` format recorded on the ledger;
   "invoice_status": "Issued"
 }
 ```
-### Smart contract function `GetInvoiceWorkRequestHistory`
+### Chaincode function `GetInvoiceWorkRequestHistory`
 
 The function `GetInvoiceWorkRequestHistory` is used to get the history of the invoice request. The function takes 1 argument. The first argument is the ID of the invoice.
 
@@ -2051,7 +2051,7 @@ Response body:
   ]
 }
 ```
-### Smart contract function `QueryInvoiceWork`
+### Chaincode function `QueryInvoiceWork`
 
 Querying the world state using the query index.
 
