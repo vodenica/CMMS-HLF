@@ -1,6 +1,6 @@
 [Main page](../../README.md)
 
-# Organisation Services Chaincode
+# Organizational Services Chaincode
 
 Organization (ORG) services [chaincode](../01-organisation) is a part of the CMMS solution, which is responsible for keeping and updating records on the ledger of the company employees. These records consist of general employee information and the current status within the company.
 
